@@ -36,22 +36,22 @@ export const contentEn: SiteContent = {
     stepsTitle: 'Problem-solving workflow',
     steps: [
       {
-        name: '1. Deep problem analysis',
+        name: 'Deep problem analysis',
         detail:
           'Before fabricating parts or writing code, I break down the real constraints of the challenge, rulebook, and operating environment.'
       },
       {
-        name: '2. Mapping viable alternatives',
+        name: 'Mapping viable alternatives',
         detail:
           'I identify multiple technical or operational paths instead of committing prematurely to the first available idea.'
       },
       {
-        name: '3. Selecting by feasibility and resonance',
+        name: 'Selecting by feasibility and resonance',
         detail:
           'I evaluate which solution is achievable within real deadlines and resources, and aligns best with the team’s strengths.'
       },
       {
-        name: '4. Digital validation and iterative execution',
+        name: 'Digital validation and iterative execution',
         detail:
           'I validate assemblies digitally before manufacturing and refine every iteration using empirical test evidence.'
       }

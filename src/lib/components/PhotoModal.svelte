@@ -5,9 +5,10 @@
     caption: string;
     closeLabel: string;
     onClose: () => void;
+    triggerElement?: HTMLElement | null;
   }
 
-  let { src, alt, caption, closeLabel, onClose }: Props = $props();
+  let { src, alt, caption, closeLabel, onClose, triggerElement = null }: Props = $props();
   let dialogEl = $state<HTMLDialogElement | null>(null);
 
   $effect(() => {
@@ -18,22 +19,32 @@
 
   function handleBackdropClick(event: MouseEvent) {
     if (event.target === dialogEl) {
-      onClose();
+      closeDialog();
     }
+  }
+
+  function closeDialog() {
+    if (dialogEl?.open) {
+      dialogEl.close();
+    }
+    /* Fix #8: return focus to the button that opened the modal */
+    triggerElement?.focus();
+    onClose();
   }
 </script>
 
+<!-- Fix #8: aria-labelledby instead of aria-label -->
 <dialog
   bind:this={dialogEl}
   class="photo-dialog"
-  aria-label={caption}
-  onclose={onClose}
+  aria-labelledby="photo-modal-caption"
+  onclose={closeDialog}
   onclick={handleBackdropClick}
 >
   <div class="dialog-inner stack-md">
     <div class="dialog-header">
-      <p class="meta-text">{caption}</p>
-      <button type="button" class="btn-secondary" onclick={onClose}>
+      <p id="photo-modal-caption" class="meta-text">{caption}</p>
+      <button type="button" class="btn-secondary" onclick={closeDialog}>
         {closeLabel}
       </button>
     </div>
@@ -76,4 +87,3 @@
     margin-inline: auto;
   }
 </style>
-

@@ -36,22 +36,22 @@ export const contentEs: SiteContent = {
     stepsTitle: 'Proceso de resolución de problemas',
     steps: [
       {
-        name: '1. Análisis previo del problema',
+        name: 'Análisis previo del problema',
         detail:
           'Antes de fabricar o escribir código, descompongo las restricciones reales del reto, el reglamento o el entorno operativo.'
       },
       {
-        name: '2. Mapeo de alternativas',
+        name: 'Mapeo de alternativas',
         detail:
           'Identifico distintas rutas técnicas o logísticas en lugar de comprometerme con la primera idea disponible.'
       },
       {
-        name: '3. Selección por viabilidad y resonancia',
+        name: 'Selección por viabilidad y resonancia',
         detail:
           'Evalúo qué solución es factible dentro del plazo y los recursos reales, y cuál tiene sentido construir con mi equipo.'
       },
       {
-        name: '4. Validación y ejecución iterativa',
+        name: 'Validación y ejecución iterativa',
         detail:
           'Documento, pruebo digitalmente antes de manufacturar y optimizo cada ciclo a partir de evidencia.'
       }

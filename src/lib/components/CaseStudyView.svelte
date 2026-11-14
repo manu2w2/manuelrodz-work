@@ -17,12 +17,14 @@
 
   let { locale, project, nextProject, labels }: Props = $props();
   let activePhoto = $state<EvidenceAsset | null>(null);
+  let activePhotoTrigger = $state<HTMLElement | null>(null);
 </script>
 
 <article class="container case-article">
   <nav aria-label={labels.backToHome} class="back-nav">
     <a href="{getHomePath(locale)}#proyectos" class="meta-text">
-      &larr; {labels.backToHome}
+      <!-- Fix #10: hide decorative arrow from screen readers -->
+      <span aria-hidden="true">&larr;</span> {labels.backToHome}
     </a>
   </nav>
 
@@ -105,9 +107,10 @@
       <h2 id="evidencia-heading">{labels.sectionEvidence}</h2>
     </div>
     <div class="evidence-list">
-      {#each project.caseStudy.evidence as asset}
+      {#each project.caseStudy.evidence as asset, i}
+        {@const titleId = `evidence-title-${i}`}
         <div class="evidence-row stack-sm">
-          <h3>{asset.title}</h3>
+          <h3 id={titleId}>{asset.title}</h3>
           <p>{asset.description}</p>
 
           {#if asset.status === 'active' && asset.type === 'photo' && asset.imageSrc}
@@ -119,10 +122,15 @@
                 height="640"
                 loading="lazy"
               />
+              <!-- Fix #9: aria-describedby links button to its h3 -->
               <button
                 type="button"
                 class="btn-secondary"
-                onclick={() => (activePhoto = asset)}
+                aria-describedby={titleId}
+                onclick={(e) => {
+                  activePhotoTrigger = e.currentTarget as HTMLElement;
+                  activePhoto = asset;
+                }}
               >
                 {labels.inspectPhotoLabel}
               </button>
@@ -131,8 +139,9 @@
             <p class="meta-text">
               <a href={asset.url} target="_blank" rel="noopener noreferrer">
                 {asset.url}
+                <!-- Fix #10: hidden external link hint -->
+                <span class="sr-only">({labels.externalLinkHint})</span>
               </a>
-              <span> ({labels.externalLinkHint})</span>
             </p>
           {:else}
             <p class="meta-text">{labels.curatingNote}</p>
@@ -145,7 +154,7 @@
   <nav class="dossier-section next-project-nav" aria-label={labels.nextProjectLabel}>
     <p class="meta-text">{labels.nextProjectLabel}</p>
     <a href={getProjectPath(locale, nextProject.slug)} class="next-link">
-      {nextProject.title} &rarr;
+      {nextProject.title} <span aria-hidden="true">&rarr;</span>
     </a>
   </nav>
 </article>
@@ -156,7 +165,8 @@
     alt={activePhoto.imageAlt ?? activePhoto.title}
     caption={activePhoto.title}
     closeLabel={labels.closeModalLabel}
-    onClose={() => (activePhoto = null)}
+    triggerElement={activePhotoTrigger}
+    onClose={() => { activePhoto = null; activePhotoTrigger = null; }}
   />
 {/if}
 
@@ -167,6 +177,11 @@
 
   .back-nav {
     margin-bottom: 1.5rem;
+  }
+
+  .back-nav a:focus-visible {
+    color: var(--accent-primary);
+    text-decoration: underline;
   }
 
   .case-header {
@@ -203,6 +218,11 @@
     font-weight: 500;
   }
 
+  .jump-list a:focus-visible {
+    color: var(--accent-primary);
+    text-decoration: underline;
+  }
+
   .attribution-box {
     padding: 1.25rem;
     background-color: var(--bg-surface);
@@ -236,5 +256,9 @@
     font-size: var(--text-h2);
     font-weight: 500;
   }
-</style>
 
+  .next-link:focus-visible {
+    color: var(--accent-primary);
+    text-decoration: underline;
+  }
+</style>

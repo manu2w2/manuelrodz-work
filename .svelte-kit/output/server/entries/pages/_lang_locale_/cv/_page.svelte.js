@@ -1,4 +1,4 @@
-import { h as head, e as escape_html, a as attr, ad as ensure_array_like, d as derived } from "../../../../chunks/index.js";
+import { h as head, e as escape_html, a as attr, ae as ensure_array_like, d as derived } from "../../../../chunks/index.js";
 import { S as SITE_CONFIG } from "../../../../chunks/site.js";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
@@ -11,7 +11,7 @@ function _page($$renderer, $$props) {
       });
       $$renderer3.push(`<meta name="description"${attr("content", data.content.meta.cvDescription)}/>`);
     });
-    $$renderer2.push(`<article class="container cv-page svelte-1jowxvw"><header class="cv-header stack-md svelte-1jowxvw"><p class="meta-text">${escape_html(cv().lastUpdated)}</p> <h1>${escape_html(cv().heading)}</h1> <p>${escape_html(cv().subtitle)}</p> <div class="cv-actions no-print svelte-1jowxvw"><a${attr("href", cvFile().href)}${attr("download", cvFile().filename)} class="btn-primary">${escape_html(cv().downloadPdfLabel)}</a> <button type="button" class="btn-secondary">${escape_html(cv().printPageLabel)}</button></div></header> <section class="dossier-section editorial-grid" aria-labelledby="cv-edu"><div><h2 id="cv-edu">${escape_html(cv().sections.education.heading)}</h2></div> <div class="stack-md"><!--[-->`);
+    $$renderer2.push(`<article class="container cv-page svelte-1jowxvw"><header class="cv-header stack-md svelte-1jowxvw"><p class="meta-text">${escape_html(cv().lastUpdated)}</p> <h1>${escape_html(cv().heading)}</h1> <p>${escape_html(cv().subtitle)}</p> <div class="cv-actions no-print svelte-1jowxvw"><a${attr("href", cvFile().href)}${attr("download", cvFile().filename)} class="btn-primary">${escape_html(cv().downloadPdfLabel)} <span class="tabular">(${escape_html(data.locale === "es" ? "PDF, aprox. 120 KB" : "PDF, approx. 120 KB")})</span></a> <button type="button" class="btn-secondary">${escape_html(cv().printPageLabel)}</button></div></header> <section class="dossier-section editorial-grid" aria-labelledby="cv-edu"><div><h2 id="cv-edu">${escape_html(cv().sections.education.heading)}</h2></div> <div class="stack-md"><!--[-->`);
     const each_array = ensure_array_like(cv().sections.education.items);
     for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
       let edu = each_array[$$index];

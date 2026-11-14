@@ -1,4 +1,4 @@
-import { g as getContext, e as escape_html, a as attr, b as stringify, d as derived, c as store_get, u as unsubscribe_stores, h as head } from "../../../chunks/index.js";
+import { g as getContext, e as escape_html, a as attr, b as attr_class, c as stringify, d as derived, f as store_get, u as unsubscribe_stores, h as head } from "../../../chunks/index.js";
 import "clsx";
 import "@sveltejs/kit/internal";
 import "../../../chunks/exports.js";
@@ -35,7 +35,7 @@ function Footer($$renderer, $$props) {
     let { locale, contact, footer } = $$props;
     $$renderer2.push(`<footer id="contacto" class="site-footer svelte-jz8lnl"><div class="container"><div class="editorial-grid footer-main svelte-jz8lnl"><div><h2>${escape_html(contact.heading)}</h2></div> <div class="stack-md"><p>${escape_html(contact.intro)}</p> `);
     {
-      $$renderer2.push(`<!--[-1--><p class="meta-text">${escape_html(locale === "es" ? "Canal de correo directo en configuración final en src/lib/config/site.ts." : "Direct email channel ready to be configured in src/lib/config/site.ts.")}</p>`);
+      $$renderer2.push(`<!--[-1--><p class="meta-text">${escape_html(locale === "es" ? "Puedes contactarme descargando mi CV formal donde encontrarás mis datos actualizados." : "You can reach me by downloading my formal CV where you will find my updated contact details.")}</p>`);
     }
     $$renderer2.push(`<!--]--> `);
     {
@@ -52,7 +52,12 @@ function Header($$renderer, $$props) {
     let switchHref = derived(() => getAlternateLocalePath(store_get($$store_subs ??= {}, "$page", page).url.pathname, targetLocale()));
     let homeHref = derived(() => getHomePath(locale));
     let cvHref = derived(() => getCvPath(locale));
-    $$renderer2.push(`<a href="#main-content" class="skip-link">${escape_html(nav.skipToContent)}</a> <header class="site-header svelte-1elxaub"><div class="container header-inner svelte-1elxaub"><a${attr("href", homeHref())} class="brand-wordmark svelte-1elxaub">${escape_html(SITE_CONFIG.brandWordmark)}</a> <nav${attr("aria-label", locale === "es" ? "Navegación principal" : "Primary navigation")}><ul class="nav-list svelte-1elxaub"><li class="svelte-1elxaub"><a${attr("href", `${stringify(homeHref())}#proyectos`)} class="svelte-1elxaub">${escape_html(nav.projects)}</a></li> <li class="svelte-1elxaub"><a${attr("href", cvHref())} class="svelte-1elxaub">${escape_html(nav.cv)}</a></li> <li class="svelte-1elxaub"><a${attr("href", `${stringify(homeHref())}#contacto`)} class="svelte-1elxaub">${escape_html(nav.contact)}</a></li> <li class="lang-item svelte-1elxaub"><a${attr("href", switchHref())}${attr("hreflang", targetLocale())}${attr("lang", targetLocale())}${attr("aria-label", nav.switchLanguageLabel)} class="lang-switch svelte-1elxaub">${escape_html(locale === "es" ? "ES · EN" : "EN · ES")}</a></li></ul></nav></div></header>`);
+    let menuOpen = false;
+    let currentPath = derived(() => store_get($$store_subs ??= {}, "$page", page).url.pathname.replace(/\/+$/, ""));
+    let isHome = derived(() => currentPath() === homeHref().replace(/\/+$/, ""));
+    let isCv = derived(() => currentPath() === cvHref().replace(/\/+$/, ""));
+    let isProjects = derived(() => currentPath().includes("/proyectos/") || currentPath().includes("/projects/"));
+    $$renderer2.push(`<a href="#main-content" class="skip-link">${escape_html(nav.skipToContent)}</a> <header class="site-header svelte-1elxaub"><div class="container header-inner svelte-1elxaub"><a${attr("href", homeHref())} class="brand-wordmark svelte-1elxaub"${attr("aria-current", isHome() ? "page" : void 0)}>${escape_html(SITE_CONFIG.brandWordmark)}</a> <button type="button" class="menu-toggle no-print svelte-1elxaub"${attr("aria-expanded", menuOpen)} aria-controls="primary-nav"><span class="sr-only">${escape_html(locale === "es" ? "Menú de navegación" : "Navigation menu")}</span> <span class="menu-icon svelte-1elxaub" aria-hidden="true">${escape_html("☰")}</span></button> <nav id="primary-nav"${attr_class("primary-nav svelte-1elxaub", void 0, { "nav-open": menuOpen })}${attr("aria-label", locale === "es" ? "Navegación principal" : "Primary navigation")}><ul class="nav-list svelte-1elxaub"><li class="svelte-1elxaub"><a${attr("href", `${stringify(homeHref())}#proyectos`)}${attr("aria-current", isProjects() ? "page" : void 0)} class="svelte-1elxaub">${escape_html(nav.projects)}</a></li> <li class="svelte-1elxaub"><a${attr("href", cvHref())}${attr("aria-current", isCv() ? "page" : void 0)} class="svelte-1elxaub">${escape_html(nav.cv)}</a></li> <li class="svelte-1elxaub"><a${attr("href", `${stringify(homeHref())}#contacto`)} class="svelte-1elxaub">${escape_html(nav.contact)}</a></li> <li class="lang-item svelte-1elxaub"><a${attr("href", switchHref())}${attr("hreflang", targetLocale())} class="lang-switch svelte-1elxaub"><span>${escape_html(locale === "es" ? "EN" : "ES")}</span> <span class="sr-only">${escape_html(nav.switchLanguageLabel)}</span></a></li></ul></nav></div></header>`);
     if ($$store_subs) unsubscribe_stores($$store_subs);
   });
 }

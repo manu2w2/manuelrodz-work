@@ -14,7 +14,7 @@ function _page($$renderer, $$props) {
       });
       $$renderer3.push(`<meta name="robots" content="noindex"/>`);
     });
-    $$renderer2.push(`<main id="main-content" class="container root-choice svelte-1uha8ag"><div class="stack-md"><h1>Manuel Enrique Rodríguez Nicolás</h1> <p>Selecciona tu idioma de lectura / Select your preferred language:</p> <div class="actions svelte-1uha8ag"><a href="/es" class="btn-primary">Continuar en Español</a> <a href="/en" class="btn-secondary">Continue in English</a></div></div></main>`);
+    $$renderer2.push(`<main id="main-content" class="container root-choice svelte-1uha8ag" tabindex="-1"><div class="stack-md"><h1>Manuel Enrique Rodríguez Nicolás</h1> <p><span>Selecciona tu idioma de lectura</span> / <span lang="en">Select your preferred language</span>:</p> <div class="actions svelte-1uha8ag"><a href="/es" hreflang="es" class="btn-primary">Continuar en Español</a> <a href="/en" hreflang="en" lang="en" class="btn-secondary">Continue in English</a></div></div></main>`);
   });
 }
 export {

@@ -30,5 +30,7 @@
   /* Transiciones funcionales */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 160ms;
-}
 
+  /* Timeline pillar accent */
+  --pillar-border: var(--accent-primary);
+}

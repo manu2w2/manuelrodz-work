@@ -28,7 +28,7 @@
 
     <div class="cv-actions no-print">
       <a href={cvFile.href} download={cvFile.filename} class="btn-primary">
-        {cv.downloadPdfLabel}
+        {cv.downloadPdfLabel} <span class="tabular">({data.locale === 'es' ? 'PDF, aprox. 120 KB' : 'PDF, approx. 120 KB'})</span>
       </a>
       <button type="button" class="btn-secondary" onclick={printPage}>
         {cv.printPageLabel}

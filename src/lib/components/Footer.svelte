@@ -45,20 +45,28 @@
               {contact.copyButton}
             </button>
           </div>
-          <p class="meta-text" aria-live="polite">{statusMessage}</p>
+          <!-- Fix #7: always-present status region -->
+          <div role="status" class="meta-text">
+            {statusMessage}
+          </div>
         {:else}
+          <!-- Fix #5: neutral fallback instead of dev note -->
           <p class="meta-text">
             {locale === 'es'
-              ? 'Canal de correo directo en configuración final en src/lib/config/site.ts.'
-              : 'Direct email channel ready to be configured in src/lib/config/site.ts.'}
+              ? 'Puedes contactarme descargando mi CV formal donde encontrarás mis datos actualizados.'
+              : 'You can reach me by downloading my formal CV where you will find my updated contact details.'}
           </p>
         {/if}
 
         {#if SITE_CONFIG.githubProfileUrl}
           <p class="meta-text">
             {contact.linksLabel}:
+            <!-- Fix #6: announce new tab -->
             <a href={SITE_CONFIG.githubProfileUrl} target="_blank" rel="noopener noreferrer">
               GitHub
+              <span class="sr-only">
+                ({locale === 'es' ? 'abre enlace externo en una nueva pestaña' : 'opens in new tab'})
+              </span>
             </a>
           </p>
         {/if}
@@ -104,4 +112,3 @@
     gap: 0.75rem 1.5rem;
   }
 </style>
-

@@ -10,9 +10,9 @@
       "_internal.js"
     ]
   },
-  "_CaseStudyView.DkdQRnCN.css": {
-    "file": "_app/immutable/assets/CaseStudyView.DkdQRnCN.css",
-    "src": "_CaseStudyView.DkdQRnCN.css"
+  "_CaseStudyView.CdFfQ0Cf.css": {
+    "file": "_app/immutable/assets/CaseStudyView.CdFfQ0Cf.css",
+    "src": "_CaseStudyView.CdFfQ0Cf.css"
   },
   "_CaseStudyView.js": {
     "file": "chunks/CaseStudyView.js",
@@ -22,16 +22,16 @@
       "_i18n.js"
     ],
     "css": [
-      "_app/immutable/assets/CaseStudyView.DkdQRnCN.css"
+      "_app/immutable/assets/CaseStudyView.CdFfQ0Cf.css"
     ]
   },
   "_exports.js": {
     "file": "chunks/exports.js",
     "name": "exports"
   },
-  "_global.B6GtXEcO.css": {
-    "file": "_app/immutable/assets/global.B6GtXEcO.css",
-    "src": "_global.B6GtXEcO.css"
+  "_global.hu41_4dR.css": {
+    "file": "_app/immutable/assets/global.hu41_4dR.css",
+    "src": "_global.hu41_4dR.css"
   },
   "_i18n.js": {
     "file": "chunks/i18n.js",
@@ -47,6 +47,9 @@
     "imports": [
       "_root.js",
       "_server.js"
+    ],
+    "dynamicImports": [
+      "src/hooks.server.ts"
     ]
   },
   "_root.js": {
@@ -234,6 +237,13 @@
       "_internal.js"
     ]
   },
+  "src/hooks.server.ts": {
+    "file": "entries/hooks.server.js",
+    "name": "entries/hooks.server",
+    "src": "src/hooks.server.ts",
+    "isEntry": true,
+    "isDynamicEntry": true
+  },
   "src/params/locale.ts": {
     "file": "entries/matchers/locale.js",
     "name": "entries/matchers/locale",
@@ -250,7 +260,7 @@
     ],
     "css": [
       "_app/immutable/assets/_error.CXythGPc.css",
-      "_app/immutable/assets/global.B6GtXEcO.css"
+      "_app/immutable/assets/global.hu41_4dR.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -267,7 +277,7 @@
     ],
     "css": [
       "_app/immutable/assets/_page.CAj2zkji.css",
-      "_app/immutable/assets/global.B6GtXEcO.css"
+      "_app/immutable/assets/global.hu41_4dR.css"
     ]
   },
   "src/routes/[lang=locale]/+layout.svelte": {
@@ -285,8 +295,8 @@
       "_site.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.DvgODaq8.css",
-      "_app/immutable/assets/global.B6GtXEcO.css"
+      "_app/immutable/assets/_layout.CC2bRa4V.css",
+      "_app/immutable/assets/global.hu41_4dR.css"
     ],
     "assets": [
       "_app/immutable/assets/newsreader-vietnamese-500-normal.CL6a8tp2.woff2",
@@ -338,7 +348,7 @@
       "_i18n.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.CTJjjKwS.css"
+      "_app/immutable/assets/_page.D7lxGK9R.css"
     ]
   },
   "src/routes/[lang=locale]/cv/+page.svelte": {

@@ -28,19 +28,19 @@ const contentEn = {
     stepsTitle: "Problem-solving workflow",
     steps: [
       {
-        name: "1. Deep problem analysis",
+        name: "Deep problem analysis",
         detail: "Before fabricating parts or writing code, I break down the real constraints of the challenge, rulebook, and operating environment."
       },
       {
-        name: "2. Mapping viable alternatives",
+        name: "Mapping viable alternatives",
         detail: "I identify multiple technical or operational paths instead of committing prematurely to the first available idea."
       },
       {
-        name: "3. Selecting by feasibility and resonance",
+        name: "Selecting by feasibility and resonance",
         detail: "I evaluate which solution is achievable within real deadlines and resources, and aligns best with the team’s strengths."
       },
       {
-        name: "4. Digital validation and iterative execution",
+        name: "Digital validation and iterative execution",
         detail: "I validate assemblies digitally before manufacturing and refine every iteration using empirical test evidence."
       }
     ],
@@ -450,19 +450,19 @@ const contentEs = {
     stepsTitle: "Proceso de resolución de problemas",
     steps: [
       {
-        name: "1. Análisis previo del problema",
+        name: "Análisis previo del problema",
         detail: "Antes de fabricar o escribir código, descompongo las restricciones reales del reto, el reglamento o el entorno operativo."
       },
       {
-        name: "2. Mapeo de alternativas",
+        name: "Mapeo de alternativas",
         detail: "Identifico distintas rutas técnicas o logísticas en lugar de comprometerme con la primera idea disponible."
       },
       {
-        name: "3. Selección por viabilidad y resonancia",
+        name: "Selección por viabilidad y resonancia",
         detail: "Evalúo qué solución es factible dentro del plazo y los recursos reales, y cuál tiene sentido construir con mi equipo."
       },
       {
-        name: "4. Validación y ejecución iterativa",
+        name: "Validación y ejecución iterativa",
         detail: "Documento, pruebo digitalmente antes de manufacturar y optimizo cada ciclo a partir de evidencia."
       }
     ],

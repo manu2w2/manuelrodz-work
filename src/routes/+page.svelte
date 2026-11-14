@@ -15,13 +15,16 @@
   <meta name="robots" content="noindex" />
 </svelte:head>
 
-<main id="main-content" class="container root-choice">
+<main id="main-content" class="container root-choice" tabindex="-1">
   <div class="stack-md">
     <h1>Manuel Enrique Rodríguez Nicolás</h1>
-    <p>Selecciona tu idioma de lectura / Select your preferred language:</p>
+    <p>
+      <span>Selecciona tu idioma de lectura</span> /
+      <span lang="en">Select your preferred language</span>:
+    </p>
     <div class="actions">
-      <a href="/es" class="btn-primary">Continuar en Español</a>
-      <a href="/en" class="btn-secondary">Continue in English</a>
+      <a href="/es" hreflang="es" class="btn-primary">Continuar en Español</a>
+      <a href="/en" hreflang="en" lang="en" class="btn-secondary">Continue in English</a>
     </div>
   </div>
 </main>

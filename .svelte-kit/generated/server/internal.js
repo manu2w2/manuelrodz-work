@@ -23,10 +23,10 @@ export const options = {
 	service_worker_options: undefined,
 	server_error_boundaries: false,
 	templates: {
-		app: ({ head, body, assets, nonce, env }) => "<!doctype html>\n<html lang=\"es\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <meta name=\"color-scheme\" content=\"light\" />\n    " + head + "\n  </head>\n  <body>\n    <div style=\"display: contents\">" + body + "</div>\n  </body>\n</html>\n\n",
+		app: ({ head, body, assets, nonce, env }) => "<!doctype html>\n<html lang=\"%lang%\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <meta name=\"color-scheme\" content=\"light\" />\n    " + head + "\n  </head>\n  <body>\n    <div style=\"display: contents\">" + body + "</div>\n  </body>\n</html>\n",
 		error
 	},
-	version_hash: "1lkbvva"
+	version_hash: "1uhyv8e"
 };
 
 export async function get_hooks() {
@@ -35,7 +35,7 @@ export async function get_hooks() {
 	let handleError;
 	let handleValidationError;
 	let init;
-	
+	({ handle, handleFetch, handleError, handleValidationError, init } = await import("../../../src/hooks.server.ts"));
 
 	let reroute;
 	let transport;

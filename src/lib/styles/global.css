@@ -29,8 +29,21 @@ main {
   flex: 1;
 }
 
+/* Fix #11: suppress outline when main receives focus via skip link */
+main:focus {
+  outline: none;
+}
+
 /* Foco de teclado de alto contraste (WCAG 2.4.11) */
 :focus-visible {
+  outline: 2px solid var(--accent-focus);
+  outline-offset: 3px;
+}
+
+/* Fix #11: consistent focus styling for interactive elements */
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
   outline: 2px solid var(--accent-focus);
   outline-offset: 3px;
 }
@@ -39,7 +52,13 @@ main {
   scroll-margin-top: 5.5rem;
 }
 
-/* Enlace de salto accesible */
+/* Better selection colour */
+::selection {
+  background-color: var(--accent-primary);
+  color: var(--bg-canvas);
+}
+
+/* Enlace de salto accesible — Fix #11: use :focus-visible not :focus */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -54,7 +73,7 @@ main {
   border-radius: var(--radius-control);
 }
 
-.skip-link:focus {
+.skip-link:focus-visible {
   left: 1rem;
 }
 
@@ -135,6 +154,11 @@ a {
 
 a:hover {
   color: var(--accent-primary-hover);
+}
+
+a:focus-visible {
+  color: var(--accent-primary);
+  text-decoration: underline;
 }
 
 .btn-primary {
@@ -234,6 +258,22 @@ a:hover {
   border: 0;
 }
 
+/* Gentle section fade-in animation */
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: sectionFadeIn 0.5s var(--ease-out) both;
+}
+
 /* Respeto estricto a reducción de movimiento (WCAG 2.3.3) */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -283,4 +323,3 @@ a:hover {
     text-decoration: none;
   }
 }
-

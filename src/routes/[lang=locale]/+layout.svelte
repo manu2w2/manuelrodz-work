@@ -1,6 +1,5 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { onMount } from 'svelte';
   import '@fontsource/newsreader/500.css';
   import '@fontsource/newsreader/600.css';
   import '@fontsource/plus-jakarta-sans/400.css';
@@ -29,15 +28,7 @@
     `${SITE_CONFIG.domain}${getAlternateLocalePath($page.url.pathname, 'en')}`
   );
 
-  $effect(() => {
-    if (typeof document !== 'undefined') {
-      document.documentElement.lang = data.locale;
-    }
-  });
-
-  onMount(() => {
-    document.documentElement.lang = data.locale;
-  });
+  /* Fix #1: lang is now set server-side via hooks.server.ts — no JS needed */
 </script>
 
 <svelte:head>
@@ -57,4 +48,3 @@
   contact={data.content.contact}
   footer={data.content.footer}
 />
-
