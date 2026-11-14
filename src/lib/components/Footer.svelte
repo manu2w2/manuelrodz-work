@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Icon from '$lib/components/Icon.svelte';
   import { SITE_CONFIG } from '$lib/config/site';
   import type { Locale, SiteContent } from '$lib/types/content';
   import { getPrivacyPath } from '$lib/utils/i18n';
@@ -11,14 +12,20 @@
 
   let { locale, contact, footer }: Props = $props();
   let statusMessage = $state('');
+  let isCopied = $state(false);
 
   async function copyEmail() {
     if (!SITE_CONFIG.contactEmail) return;
     try {
       await navigator.clipboard.writeText(SITE_CONFIG.contactEmail);
       statusMessage = contact.copiedAnnouncement;
+      isCopied = true;
+      setTimeout(() => {
+        isCopied = false;
+      }, 3000);
     } catch {
       statusMessage = contact.copyFallbackAnnouncement;
+      isCopied = false;
     }
   }
 </script>
@@ -35,18 +42,20 @@
 
         {#if SITE_CONFIG.contactEmail}
           <div class="contact-row">
-            <div>
+            <div class="email-block">
               <p class="meta-text">{contact.emailLabel}</p>
               <a href="mailto:{SITE_CONFIG.contactEmail}" class="email-link">
-                {SITE_CONFIG.contactEmail}
+                <Icon name="mail" size={18} />
+                <span>{SITE_CONFIG.contactEmail}</span>
               </a>
             </div>
             <button type="button" class="btn-secondary" onclick={copyEmail}>
-              {contact.copyButton}
+              <Icon name={isCopied ? 'check' : 'copy'} size={16} />
+              <span>{isCopied ? (locale === 'es' ? 'Copiado' : 'Copied') : contact.copyButton}</span>
             </button>
           </div>
           <!-- Fix #7: always-present status region -->
-          <div role="status" class="meta-text">
+          <div role="status" class="meta-text copy-status" aria-live="polite">
             {statusMessage}
           </div>
         {:else}
@@ -59,11 +68,13 @@
         {/if}
 
         {#if SITE_CONFIG.githubProfileUrl}
-          <p class="meta-text">
-            {contact.linksLabel}:
+          <p class="meta-text github-row">
+            <span class="github-label">{contact.linksLabel}:</span>
             <!-- Fix #6: announce new tab -->
-            <a href={SITE_CONFIG.githubProfileUrl} target="_blank" rel="noopener noreferrer">
-              GitHub
+            <a href={SITE_CONFIG.githubProfileUrl} target="_blank" rel="noopener noreferrer" class="github-link">
+              <Icon name="github" size={17} />
+              <span>GitHub</span>
+              <Icon name="external" size={13} />
               <span class="sr-only">
                 ({locale === 'es' ? 'abre enlace externo en una nueva pestaña' : 'opens in new tab'})
               </span>
@@ -98,9 +109,38 @@
     gap: 1rem 1.5rem;
   }
 
+  .email-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
   .email-link {
     font-weight: 600;
     font-size: var(--text-body);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .copy-status {
+    min-height: 1.5rem;
+    color: var(--accent-primary);
+    font-weight: 500;
+  }
+
+  .github-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 600;
   }
 
   .footer-bottom {

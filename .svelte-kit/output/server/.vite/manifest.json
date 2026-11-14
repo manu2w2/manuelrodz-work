@@ -10,28 +10,43 @@
       "_internal.js"
     ]
   },
-  "_CaseStudyView.CdFfQ0Cf.css": {
-    "file": "_app/immutable/assets/CaseStudyView.CdFfQ0Cf.css",
-    "src": "_CaseStudyView.CdFfQ0Cf.css"
+  "_CaseStudyView.DqyFO5Hh.css": {
+    "file": "_app/immutable/assets/CaseStudyView.DqyFO5Hh.css",
+    "src": "_CaseStudyView.DqyFO5Hh.css"
   },
   "_CaseStudyView.js": {
     "file": "chunks/CaseStudyView.js",
     "name": "CaseStudyView",
     "imports": [
       "_index.js",
+      "_Icon.js",
       "_i18n.js"
     ],
     "css": [
-      "_app/immutable/assets/CaseStudyView.CdFfQ0Cf.css"
+      "_app/immutable/assets/CaseStudyView.DqyFO5Hh.css"
+    ]
+  },
+  "_Icon.DskQ8yDc.css": {
+    "file": "_app/immutable/assets/Icon.DskQ8yDc.css",
+    "src": "_Icon.DskQ8yDc.css"
+  },
+  "_Icon.js": {
+    "file": "chunks/Icon.js",
+    "name": "Icon",
+    "imports": [
+      "_index.js"
+    ],
+    "css": [
+      "_app/immutable/assets/Icon.DskQ8yDc.css"
     ]
   },
   "_exports.js": {
     "file": "chunks/exports.js",
     "name": "exports"
   },
-  "_global.hu41_4dR.css": {
-    "file": "_app/immutable/assets/global.hu41_4dR.css",
-    "src": "_global.hu41_4dR.css"
+  "_global.C17hfpRD.css": {
+    "file": "_app/immutable/assets/global.C17hfpRD.css",
+    "src": "_global.C17hfpRD.css"
   },
   "_i18n.js": {
     "file": "chunks/i18n.js",
@@ -260,7 +275,7 @@
     ],
     "css": [
       "_app/immutable/assets/_error.CXythGPc.css",
-      "_app/immutable/assets/global.hu41_4dR.css"
+      "_app/immutable/assets/global.C17hfpRD.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -277,7 +292,7 @@
     ],
     "css": [
       "_app/immutable/assets/_page.CAj2zkji.css",
-      "_app/immutable/assets/global.hu41_4dR.css"
+      "_app/immutable/assets/global.C17hfpRD.css"
     ]
   },
   "src/routes/[lang=locale]/+layout.svelte": {
@@ -291,12 +306,13 @@
       "_utils2.js",
       "_root.js",
       "_state.svelte.js",
-      "_i18n.js",
-      "_site.js"
+      "_Icon.js",
+      "_site.js",
+      "_i18n.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.CC2bRa4V.css",
-      "_app/immutable/assets/global.hu41_4dR.css"
+      "_app/immutable/assets/_layout.BmO8jnb7.css",
+      "_app/immutable/assets/global.C17hfpRD.css"
     ],
     "assets": [
       "_app/immutable/assets/newsreader-vietnamese-500-normal.CL6a8tp2.woff2",
@@ -344,11 +360,12 @@
     "isEntry": true,
     "imports": [
       "_index.js",
+      "_Icon.js",
       "_site.js",
       "_i18n.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.D7lxGK9R.css"
+      "_app/immutable/assets/_page.BriF5tdQ.css"
     ]
   },
   "src/routes/[lang=locale]/cv/+page.svelte": {
@@ -358,10 +375,11 @@
     "isEntry": true,
     "imports": [
       "_index.js",
+      "_Icon.js",
       "_site.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.DbdsF3Q5.css"
+      "_app/immutable/assets/_page.BYc2Yk0b.css"
     ]
   },
   "src/routes/[lang=locale]/privacidad/+page.svelte": {

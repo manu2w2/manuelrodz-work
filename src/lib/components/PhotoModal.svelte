@@ -60,10 +60,45 @@
     border-radius: var(--radius-control);
     background-color: var(--bg-canvas);
     color: var(--text-primary);
+    box-shadow: 0 16px 40px rgba(30, 32, 30, 0.2);
+  }
+
+  .photo-dialog[open] {
+    animation: modalIn 240ms var(--ease-spring) forwards;
   }
 
   .photo-dialog::backdrop {
     background-color: rgba(30, 32, 30, 0.72);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    animation: backdropFade 200ms var(--ease-out) forwards;
+  }
+
+  @keyframes modalIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes backdropFade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .photo-dialog[open],
+    .photo-dialog::backdrop {
+      animation: none !important;
+    }
   }
 
   .dialog-inner {

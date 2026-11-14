@@ -53,6 +53,6 @@ declare module "$app/types" {
 		};
 		Pathname(): "/" | `/${string}` & {} | `/${string}/cv` & {} | `/${string}/privacidad` & {} | `/${string}/privacy` & {} | `/${string}/projects/${string}` & {} | `/${string}/proyectos/${string}` & {};
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/cv/manuel-rodriguez-cv-en.pdf" | "/cv/manuel-rodriguez-cv-es.pdf" | "/images/.gitkeep" | "/robots.txt" | "/sitemap.xml" | string & {};
+		Asset(): "/cv/manuel-rodriguez-cv-en.pdf" | "/cv/manuel-rodriguez-cv-es.pdf" | "/images/.gitkeep" | "/images/hero-robot.png" | "/images/manuel-rodriguez-placeholder.svg" | "/images/manuel-rodriguez.webp" | "/robots.txt" | "/sitemap.xml" | string & {};
 	}
 }

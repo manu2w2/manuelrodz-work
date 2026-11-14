@@ -23,13 +23,14 @@ body {
   background-color: var(--bg-canvas);
   color: var(--text-primary);
   font-size: var(--text-body);
+  background-image: radial-gradient(var(--border-subtle) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 main {
   flex: 1;
 }
 
-/* Fix #11: suppress outline when main receives focus via skip link */
 main:focus {
   outline: none;
 }
@@ -40,7 +41,6 @@ main:focus {
   outline-offset: 3px;
 }
 
-/* Fix #11: consistent focus styling for interactive elements */
 button:focus-visible,
 summary:focus-visible,
 [tabindex]:focus-visible {
@@ -52,13 +52,12 @@ summary:focus-visible,
   scroll-margin-top: 5.5rem;
 }
 
-/* Better selection colour */
 ::selection {
   background-color: var(--accent-primary);
   color: var(--bg-canvas);
 }
 
-/* Enlace de salto accesible — Fix #11: use :focus-visible not :focus */
+/* Enlace de salto accesible */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -77,7 +76,7 @@ summary:focus-visible,
   left: 1rem;
 }
 
-/* Contenedor principal */
+/* Contenedor principal (1200px) */
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -90,10 +89,11 @@ h1 {
   font-family: var(--font-display);
   font-size: var(--text-hero);
   font-weight: 500;
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -0.025em;
   margin: 0;
   color: var(--text-primary);
+  text-wrap: balance;
 }
 
 h2 {
@@ -104,6 +104,7 @@ h2 {
   letter-spacing: -0.015em;
   margin: 0;
   color: var(--text-primary);
+  text-wrap: balance;
 }
 
 h3 {
@@ -113,15 +114,28 @@ h3 {
   line-height: 1.4;
   margin: 0;
   color: var(--text-primary);
+  text-wrap: balance;
 }
 
 p,
 ul,
 ol {
   font-size: var(--text-body);
-  line-height: 1.65;
+  line-height: 1.68;
   margin: 0;
   max-width: var(--measure-prose);
+  text-wrap: pretty;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
 }
 
 ul,
@@ -149,11 +163,14 @@ a {
   color: var(--accent-primary);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
-  transition: color var(--duration-fast) var(--ease-out);
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    text-underline-offset var(--duration-fast) var(--ease-out);
 }
 
 a:hover {
   color: var(--accent-primary-hover);
+  text-underline-offset: 0.32em;
 }
 
 a:focus-visible {
@@ -177,15 +194,25 @@ a:focus-visible {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
+  box-shadow: 0 1px 2px rgba(44, 76, 59, 0.15);
   transition:
     background-color var(--duration-fast) var(--ease-out),
-    border-color var(--duration-fast) var(--ease-out);
+    border-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-spring),
+    box-shadow var(--duration-fast) var(--ease-out);
 }
 
 .btn-primary:hover {
   background-color: var(--accent-primary-hover);
   border-color: var(--accent-primary-hover);
   color: var(--bg-canvas);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 10px rgba(44, 76, 59, 0.22);
+}
+
+.btn-primary:active {
+  transform: translateY(0.5px);
+  box-shadow: 0 1px 2px rgba(44, 76, 59, 0.15);
 }
 
 .btn-secondary {
@@ -206,16 +233,40 @@ a:focus-visible {
   cursor: pointer;
   transition:
     background-color var(--duration-fast) var(--ease-out),
-    border-color var(--duration-fast) var(--ease-out);
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-spring),
+    box-shadow var(--duration-fast) var(--ease-out);
 }
 
 .btn-secondary:hover {
   background-color: var(--bg-surface);
   border-color: var(--text-primary);
   color: var(--text-primary);
+  transform: translateY(-1.5px);
+  box-shadow: 0 3px 8px rgba(30, 32, 30, 0.06);
 }
 
-/* Retícula editorial asimétrica (sin tarjetas repetitivas) */
+.btn-secondary:active {
+  transform: translateY(0.5px);
+}
+
+/* Micro-animaciones en iconos de interacción */
+.btn-primary:hover :global(.icon-arrow-right),
+.btn-secondary:hover :global(.icon-arrow-right),
+a:hover :global(.icon-arrow-right) {
+  transform: translateX(3px);
+}
+
+.btn-primary:hover :global(.icon-download) {
+  transform: translateY(1.5px);
+}
+
+.btn-secondary:hover :global(.icon-print) {
+  transform: scale(1.08);
+}
+
+/* Retícula maestra unificada (5fr / 7fr · gap 48px) */
 .dossier-section {
   padding-block: clamp(2.5rem, 5vw, 4rem);
   border-top: 1px solid var(--border-subtle);
@@ -224,12 +275,12 @@ a:focus-visible {
 .editorial-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem 3rem;
+  gap: 1.5rem var(--grid-gap);
 }
 
-@media (min-width: 52rem) {
+@media (min-width: 54rem) {
   .editorial-grid {
-    grid-template-columns: minmax(14rem, 18rem) 1fr;
+    grid-template-columns: var(--grid-col-left) var(--grid-col-right);
     align-items: start;
   }
 }
@@ -270,9 +321,30 @@ a:focus-visible {
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-in {
   animation: sectionFadeIn 0.5s var(--ease-out) both;
 }
+
+.anim-fade-up {
+  animation: fadeInUp 450ms var(--ease-smooth) both;
+}
+
+.anim-delay-1 { animation-delay: 60ms; }
+.anim-delay-2 { animation-delay: 130ms; }
+.anim-delay-3 { animation-delay: 200ms; }
+.anim-delay-4 { animation-delay: 270ms; }
+.anim-delay-5 { animation-delay: 340ms; }
 
 /* Respeto estricto a reducción de movimiento (WCAG 2.3.3) */
 @media (prefers-reduced-motion: reduce) {

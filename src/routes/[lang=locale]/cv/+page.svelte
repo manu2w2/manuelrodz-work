@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Icon from '$lib/components/Icon.svelte';
   import { SITE_CONFIG } from '$lib/config/site';
   import type { PageData } from './$types';
 
@@ -28,10 +29,13 @@
 
     <div class="cv-actions no-print">
       <a href={cvFile.href} download={cvFile.filename} class="btn-primary">
-        {cv.downloadPdfLabel} <span class="tabular">({data.locale === 'es' ? 'PDF, aprox. 120 KB' : 'PDF, approx. 120 KB'})</span>
+        <Icon name="download" size={17} />
+        <span>{cv.downloadPdfLabel}</span>
+        <span class="tabular meta-badge">({data.locale === 'es' ? 'PDF · aprox. 120 KB' : 'PDF · approx. 120 KB'})</span>
       </a>
       <button type="button" class="btn-secondary" onclick={printPage}>
-        {cv.printPageLabel}
+        <Icon name="print" size={17} />
+        <span>{cv.printPageLabel}</span>
       </button>
     </div>
   </header>
@@ -130,6 +134,26 @@
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border-subtle);
+  }
+
+  .cv-entry {
+    padding: 0.5rem 0.65rem;
+    border-radius: var(--radius-control);
+    transition:
+      background-color var(--duration-fast) var(--ease-out),
+      transform var(--duration-fast) var(--ease-spring);
+  }
+
+  .cv-entry:hover {
+    background-color: color-mix(in srgb, var(--bg-surface) 60%, transparent);
+    transform: translateX(4px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cv-entry {
+      transition: none !important;
+      transform: none !important;
+    }
   }
 </style>
 

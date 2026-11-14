@@ -1,9 +1,12 @@
-import { a as attr, e as escape_html, ae as ensure_array_like, c as stringify } from "./index.js";
+import { a as attr, e as escape_html, ae as ensure_array_like, b as stringify } from "./index.js";
+import { I as Icon } from "./Icon.js";
 import { d as getProjectPath, b as getHomePath } from "./i18n.js";
 function CaseStudyView($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     let { locale, project, nextProject, labels } = $$props;
-    $$renderer2.push(`<article class="container case-article svelte-x2a1mg"><nav${attr("aria-label", labels.backToHome)} class="back-nav svelte-x2a1mg"><a${attr("href", `${stringify(getHomePath(locale))}#proyectos`)} class="meta-text svelte-x2a1mg"><span aria-hidden="true">←</span> ${escape_html(labels.backToHome)}</a></nav> <header class="case-header stack-md svelte-x2a1mg"><p class="meta-text">${escape_html(project.period)} · ${escape_html(project.collaborationModel)}</p> <h1>${escape_html(project.title)}</h1> <p class="role-line svelte-x2a1mg">${escape_html(project.roleSummary)}</p> <p>${escape_html(project.executiveSummary)}</p> <nav${attr("aria-label", labels.jumpHeading)} class="jump-nav svelte-x2a1mg"><ul class="jump-list svelte-x2a1mg"><li class="svelte-x2a1mg"><a href="#contexto" class="svelte-x2a1mg">${escape_html(labels.sectionContext)}</a></li> <li class="svelte-x2a1mg"><a href="#decisiones" class="svelte-x2a1mg">${escape_html(labels.sectionDecisions)}</a></li> <li class="svelte-x2a1mg"><a href="#ejecucion" class="svelte-x2a1mg">${escape_html(labels.sectionExecution)}</a></li> <li class="svelte-x2a1mg"><a href="#resultados" class="svelte-x2a1mg">${escape_html(labels.sectionOutcomes)}</a></li> <li class="svelte-x2a1mg"><a href="#evidencia" class="svelte-x2a1mg">${escape_html(labels.sectionEvidence)}</a></li></ul></nav></header> <section class="dossier-section editorial-grid" aria-labelledby="attribution-heading"><div><h2 id="attribution-heading">${escape_html(labels.attributionHeading)}</h2></div> <div class="attribution-box svelte-x2a1mg"><p>${escape_html(project.caseStudy.attributionStatement)}</p></div></section> <section id="contexto" class="dossier-section editorial-grid" aria-labelledby="contexto-heading"><div><h2 id="contexto-heading">${escape_html(labels.sectionContext)}</h2></div> <div class="stack-md"><!--[-->`);
+    $$renderer2.push(`<article class="container case-article svelte-x2a1mg"><nav${attr("aria-label", labels.backToHome)} class="back-nav svelte-x2a1mg"><a${attr("href", `${stringify(getHomePath(locale))}#proyectos`)} class="meta-text back-link svelte-x2a1mg">`);
+    Icon($$renderer2, { name: "arrow-left", size: 14 });
+    $$renderer2.push(`<!----> <span>${escape_html(labels.backToHome)}</span></a></nav> <header class="case-header stack-md svelte-x2a1mg"><p class="meta-text">${escape_html(project.period)} · ${escape_html(project.collaborationModel)}</p> <h1>${escape_html(project.title)}</h1> <p class="role-line svelte-x2a1mg">${escape_html(project.roleSummary)}</p> <p>${escape_html(project.executiveSummary)}</p> <nav${attr("aria-label", labels.jumpHeading)} class="jump-nav svelte-x2a1mg"><ul class="jump-list svelte-x2a1mg"><li class="svelte-x2a1mg"><a href="#contexto" class="svelte-x2a1mg">${escape_html(labels.sectionContext)}</a></li> <li class="svelte-x2a1mg"><a href="#decisiones" class="svelte-x2a1mg">${escape_html(labels.sectionDecisions)}</a></li> <li class="svelte-x2a1mg"><a href="#ejecucion" class="svelte-x2a1mg">${escape_html(labels.sectionExecution)}</a></li> <li class="svelte-x2a1mg"><a href="#resultados" class="svelte-x2a1mg">${escape_html(labels.sectionOutcomes)}</a></li> <li class="svelte-x2a1mg"><a href="#evidencia" class="svelte-x2a1mg">${escape_html(labels.sectionEvidence)}</a></li></ul></nav></header> <section class="dossier-section editorial-grid" aria-labelledby="attribution-heading"><div><h2 id="attribution-heading">${escape_html(labels.attributionHeading)}</h2></div> <div class="attribution-box svelte-x2a1mg"><p>${escape_html(project.caseStudy.attributionStatement)}</p></div></section> <section id="contexto" class="dossier-section editorial-grid" aria-labelledby="contexto-heading"><div><h2 id="contexto-heading">${escape_html(labels.sectionContext)}</h2></div> <div class="stack-md"><!--[-->`);
     const each_array = ensure_array_like(project.caseStudy.contextAndConstraints);
     for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
       let paragraph = each_array[$$index];
@@ -36,13 +39,17 @@ function CaseStudyView($$renderer, $$props) {
       if (asset.status === "active" && asset.type === "photo" && asset.imageSrc) {
         $$renderer2.push(`<!--[0--><figure class="evidence-figure stack-sm svelte-x2a1mg"><img${attr("src", asset.imageSrc)}${attr("alt", asset.imageAlt ?? asset.title)} width="960" height="640" loading="lazy" class="svelte-x2a1mg"/> <button type="button" class="btn-secondary"${attr("aria-describedby", titleId)}>${escape_html(labels.inspectPhotoLabel)}</button></figure>`);
       } else if (asset.status === "active" && asset.url) {
-        $$renderer2.push(`<!--[1--><p class="meta-text"><a${attr("href", asset.url)} target="_blank" rel="noopener noreferrer">${escape_html(asset.url)} <span class="sr-only">(${escape_html(labels.externalLinkHint)})</span></a></p>`);
+        $$renderer2.push(`<!--[1--><p class="meta-text"><a${attr("href", asset.url)} target="_blank" rel="noopener noreferrer" class="evidence-external-link svelte-x2a1mg"><span>${escape_html(asset.url)}</span> `);
+        Icon($$renderer2, { name: "external", size: 13 });
+        $$renderer2.push(`<!----> <span class="sr-only">(${escape_html(labels.externalLinkHint)})</span></a></p>`);
       } else {
         $$renderer2.push(`<!--[-1--><p class="meta-text">${escape_html(labels.curatingNote)}</p>`);
       }
       $$renderer2.push(`<!--]--></div>`);
     }
-    $$renderer2.push(`<!--]--></div></section> <nav class="dossier-section next-project-nav svelte-x2a1mg"${attr("aria-label", labels.nextProjectLabel)}><p class="meta-text">${escape_html(labels.nextProjectLabel)}</p> <a${attr("href", getProjectPath(locale, nextProject.slug))} class="next-link svelte-x2a1mg">${escape_html(nextProject.title)} <span aria-hidden="true">→</span></a></nav></article> `);
+    $$renderer2.push(`<!--]--></div></section> <nav class="dossier-section next-project-nav svelte-x2a1mg"${attr("aria-label", labels.nextProjectLabel)}><p class="meta-text">${escape_html(labels.nextProjectLabel)}</p> <a${attr("href", getProjectPath(locale, nextProject.slug))} class="next-link svelte-x2a1mg"><span>${escape_html(nextProject.title)}</span> `);
+    Icon($$renderer2, { name: "arrow-right", size: 20 });
+    $$renderer2.push(`<!----></a></nav></article> `);
     {
       $$renderer2.push("<!--[-1-->");
     }

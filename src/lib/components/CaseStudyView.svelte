@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Icon from '$lib/components/Icon.svelte';
   import PhotoModal from '$lib/components/PhotoModal.svelte';
   import type {
     AnchorProject,
@@ -22,9 +23,9 @@
 
 <article class="container case-article">
   <nav aria-label={labels.backToHome} class="back-nav">
-    <a href="{getHomePath(locale)}#proyectos" class="meta-text">
-      <!-- Fix #10: hide decorative arrow from screen readers -->
-      <span aria-hidden="true">&larr;</span> {labels.backToHome}
+    <a href="{getHomePath(locale)}#proyectos" class="meta-text back-link">
+      <Icon name="arrow-left" size={14} />
+      <span>{labels.backToHome}</span>
     </a>
   </nav>
 
@@ -137,8 +138,9 @@
             </figure>
           {:else if asset.status === 'active' && asset.url}
             <p class="meta-text">
-              <a href={asset.url} target="_blank" rel="noopener noreferrer">
-                {asset.url}
+              <a href={asset.url} target="_blank" rel="noopener noreferrer" class="evidence-external-link">
+                <span>{asset.url}</span>
+                <Icon name="external" size={13} />
                 <!-- Fix #10: hidden external link hint -->
                 <span class="sr-only">({labels.externalLinkHint})</span>
               </a>
@@ -154,7 +156,8 @@
   <nav class="dossier-section next-project-nav" aria-label={labels.nextProjectLabel}>
     <p class="meta-text">{labels.nextProjectLabel}</p>
     <a href={getProjectPath(locale, nextProject.slug)} class="next-link">
-      {nextProject.title} <span aria-hidden="true">&rarr;</span>
+      <span>{nextProject.title}</span>
+      <Icon name="arrow-right" size={20} />
     </a>
   </nav>
 </article>
@@ -251,14 +254,84 @@
     gap: 0.5rem;
   }
 
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: transform var(--duration-fast) var(--ease-spring);
+  }
+
+  .back-link:hover {
+    transform: translateX(-3px);
+  }
+
+  .evidence-external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .jump-list a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-control);
+    font-size: var(--text-meta);
+    font-weight: 500;
+    transition:
+      background-color var(--duration-fast) var(--ease-out),
+      color var(--duration-fast) var(--ease-out),
+      transform var(--duration-fast) var(--ease-spring);
+  }
+
+  .jump-list a:hover {
+    background-color: var(--bg-surface);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+
+  .evidence-row {
+    padding: 0.75rem;
+    border-radius: var(--radius-control);
+    transition:
+      background-color var(--duration-fast) var(--ease-out),
+      transform var(--duration-fast) var(--ease-spring);
+  }
+
+  .evidence-row:hover {
+    background-color: color-mix(in srgb, var(--bg-surface) 45%, transparent);
+    transform: translateX(3px);
+  }
+
   .next-link {
     font-family: var(--font-display);
     font-size: var(--text-h2);
     font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition:
+      color var(--duration-fast) var(--ease-out),
+      transform var(--duration-fast) var(--ease-spring);
+  }
+
+  .next-link:hover {
+    transform: translateX(4px);
   }
 
   .next-link:focus-visible {
     color: var(--accent-primary);
     text-decoration: underline;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .back-link,
+    .jump-list a,
+    .evidence-row,
+    .next-link {
+      transition: none !important;
+      transform: none !important;
+    }
   }
 </style>

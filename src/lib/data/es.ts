@@ -13,18 +13,18 @@ export const contentEs: SiteContent = {
   nav: {
     skipToContent: 'Saltar al contenido principal',
     projects: 'Proyectos',
-    cv: 'CV formal',
+    cv: 'Currículum',
     contact: 'Contacto',
     switchLanguageLabel: 'Cambiar idioma a inglés'
   },
   hero: {
-    fullName: 'Manuel Enrique Rodríguez Nicolás',
-    academicStatus: 'Estudiante de tercer año de bachillerato próximo a graduarse',
-    location: 'Mérida, Yucatán, México',
+    academicStatus: "DISEÑO MECÁNICO · SISTEMAS EMBEBIDOS · DESARROLLO WEB",
+    fullName: "Manuel Enrique Rodríguez Nicolás",
     coreStatement:
-      'Diseño sistemas, construyo soluciones de ingeniería y coorganizo proyectos colaborativos bajo un mismo principio: analizar a fondo, decidir por viabilidad e impacto, y compartir lo aprendido.',
-    primaryCta: 'Descargar CV formal (PDF · ES)',
-    secondaryCta: 'Explorar trayectoria y proyectos'
+      "Diseño mecanismos en Onshape, programo sistemas de control en C++/Java para robótica competitiva y desarrollo plataformas web con SvelteKit. Combino rigor técnico y logística para llevar proyectos desde el prototipo hasta la ejecución.",
+    primaryCta: "Descargar CV (PDF · ES)",
+    secondaryCta: "Explorar trayectoria y proyectos",
+    location: "Mérida, Yucatán, México",
   },
   method: {
     heading: 'Cómo pienso y construyo',

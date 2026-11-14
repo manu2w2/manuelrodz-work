@@ -13,6 +13,13 @@ const config = {
       strict: true
     }),
     prerender: {
+      handleHttpError: ({ status, path, referrer, referenceType }) => {
+        if (status === 404 && path.startsWith('/images/')) {
+          console.warn(`[prerender] Warning 404 on ${path} from ${referrer}`);
+          return;
+        }
+        throw new Error(`${status} ${path}${referrer ? ` (${referenceType} from ${referrer})` : ''}`);
+      },
       entries: [
         '/',
         '/es',

@@ -3,33 +3,51 @@
   --bg-canvas: #f7f6f2;
   --bg-surface: #eceae2;
   --border-subtle: #d5d2c7;
+  --border-structural: #e2e4dd;
   --border-strong: #9c988b;
+  --connector-line: #c5cbc6;
 
-  --text-primary: #1e201e;     /* Contraste 14.8:1 sobre #F7F6F2 */
-  --text-secondary: #525651;   /* Contraste 6.4:1 sobre #F7F6F2 */
+  /* Jerarquía de contraste WCAG AA verificada sobre #F7F6F2 */
+  --text-primary: #1e201e;     /* Contraste 14.8:1 */
+  --text-secondary: #525b56;   /* Contraste 6.45:1 — textos informativos y metadatos */
+  --text-tertiary: #3a433e;    /* Contraste 9.55:1 — etiquetas monoespaciadas y cotas CAD */
 
-  --accent-primary: #2c4c3b;   /* Contraste 8.9:1 sobre #F7F6F2 */
+  --accent-primary: #2c4c3b;   /* Contraste 8.9:1 */
   --accent-primary-hover: #1f372b;
-  --accent-focus: #9e4a47;     /* Contraste 5.4:1 sobre #F7F6F2 */
+  --accent-focus: #9e4a47;     /* Contraste 5.4:1 */
+  --indicator-square: #2c3e35;
 
-  /* Familias tipográficas (2 familias máximo) */
+  /* Familias tipográficas */
   --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
 
-  /* Escala tipográfica estricta (H1 libre + 3 tamaños exactos de cuerpo) */
-  --text-hero: clamp(2.25rem, 4.5vw, 3.35rem);
+  /* Escala tipográfica estricta */
+  --text-hero: clamp(2.25rem, 4.2vw, 3.25rem);
   --text-h2: 1.5rem;        /* 24px - Encabezados de sección */
   --text-body: 1.0625rem;   /* 17px - Todo texto corrido, listas y H3 por peso */
-  --text-meta: 0.875rem;    /* 14px - Fechas, roles y metadatos (nunca < 13px) */
+  --text-meta: 0.875rem;    /* 14px - Fechas, roles y metadatos */
 
-  /* Medidas y ritmo espacial */
-  --container-max: 70rem;   /* 1120px */
+  /* Retícula maestra unificada (1200px · 5fr / 7fr · gap 48px) */
+  --container-max: 75rem;   /* 1200px */
+  --grid-col-left: 5fr;
+  --grid-col-right: 7fr;
+  --grid-gap: 3rem;         /* 48px */
   --measure-prose: 65ch;
   --radius-control: 2px;
 
-  /* Transiciones funcionales */
+  /* Transiciones y animaciones funcionales */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 160ms;
+  --duration-normal: 260ms;
+  --duration-slow: 400ms;
+
+  /* Sombras suaves táctiles */
+  --shadow-sm: 0 1px 3px rgba(30, 32, 30, 0.05);
+  --shadow-md: 0 4px 14px rgba(30, 32, 30, 0.07);
+  --shadow-lg: 0 10px 28px rgba(30, 32, 30, 0.1);
 
   /* Timeline pillar accent */
   --pillar-border: var(--accent-primary);

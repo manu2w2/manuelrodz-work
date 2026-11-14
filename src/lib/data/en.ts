@@ -13,18 +13,18 @@ export const contentEn: SiteContent = {
   nav: {
     skipToContent: 'Skip to main content',
     projects: 'Projects',
-    cv: 'Formal CV',
+    cv: 'Resume',
     contact: 'Contact',
     switchLanguageLabel: 'Switch language to Spanish'
   },
   hero: {
-    fullName: 'Manuel Enrique Rodríguez Nicolás',
-    academicStatus: 'Graduating high school senior (final-year preparatory student)',
-    location: 'Mérida, Yucatán, Mexico',
+    academicStatus: "MECHANICAL DESIGN · EMBEDDED SYSTEMS · WEB DEVELOPMENT",
+    fullName: "Manuel Enrique Rodríguez Nicolás",
     coreStatement:
-      'I design systems, build engineering solutions, and co-lead collaborative initiatives around one core principle: analyze deeply, decide by feasibility and impact, and share what I learn.',
-    primaryCta: 'Download Formal CV (PDF · EN)',
-    secondaryCta: 'Explore trajectory and projects'
+      "I design mechanisms in Onshape, program C++/Java control architectures for competitive robotics, and build web platforms with SvelteKit—combining technical rigor and logistics from prototype to execution.",
+    primaryCta: "Download CV (PDF · EN)",
+    secondaryCta: "Explore trajectory & projects",
+    location: "Mérida, Yucatán, Mexico",
   },
   method: {
     heading: 'How I Think and Build',
