@@ -1,0 +1,34 @@
+:root {
+  /* Paleta Opción A: Dossier Editorial y Cuaderno de Ingeniería */
+  --bg-canvas: #f7f6f2;
+  --bg-surface: #eceae2;
+  --border-subtle: #d5d2c7;
+  --border-strong: #9c988b;
+
+  --text-primary: #1e201e;     /* Contraste 14.8:1 sobre #F7F6F2 */
+  --text-secondary: #525651;   /* Contraste 6.4:1 sobre #F7F6F2 */
+
+  --accent-primary: #2c4c3b;   /* Contraste 8.9:1 sobre #F7F6F2 */
+  --accent-primary-hover: #1f372b;
+  --accent-focus: #9e4a47;     /* Contraste 5.4:1 sobre #F7F6F2 */
+
+  /* Familias tipográficas (2 familias máximo) */
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Escala tipográfica estricta (H1 libre + 3 tamaños exactos de cuerpo) */
+  --text-hero: clamp(2.25rem, 4.5vw, 3.35rem);
+  --text-h2: 1.5rem;        /* 24px - Encabezados de sección */
+  --text-body: 1.0625rem;   /* 17px - Todo texto corrido, listas y H3 por peso */
+  --text-meta: 0.875rem;    /* 14px - Fechas, roles y metadatos (nunca < 13px) */
+
+  /* Medidas y ritmo espacial */
+  --container-max: 70rem;   /* 1120px */
+  --measure-prose: 65ch;
+  --radius-control: 2px;
+
+  /* Transiciones funcionales */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+}
+
