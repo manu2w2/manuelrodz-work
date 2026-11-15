@@ -29,8 +29,8 @@
   --text-meta: 0.875rem;    /* 14px - Fechas, roles y metadatos */
 
   /* Retícula maestra unificada (1200px · 5fr / 7fr · gap 48px) */
-  --container-max: 75rem;   /* 1200px */
-  --grid-col-left: 5fr;
+  --container-max: 76rem;   /* 1200px */
+  --grid-col-left: 4fr;
   --grid-col-right: 7fr;
   --grid-gap: 3rem;         /* 48px */
   --measure-prose: 65ch;
