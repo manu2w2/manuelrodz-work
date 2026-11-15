@@ -1,23 +1,3 @@
-<script lang="ts" module>
-  function getProjectTags(slug: string, isEn: boolean): string[] {
-    const tagsMap: Record<string, string[]> = {
-      aztecbot: isEn
-        ? ["FTC Robotics", "CAD-First", "Drive Coach"]
-        : ["Robótica FTC", "Flujo CAD", "Drive Coach"],
-      "velocity-bucks": isEn
-        ? ["Team Founder", "Java Architecture", "Web Dev"]
-        : ["Cofundación", "Arquitectura Java", "Web"],
-      "valladolid-mun": isEn
-        ? ["Model UN", "Horizontal Leadership", "60+ Delegations"]
-        : ["Modelo ONU", "Liderazgo Horizontal", "60+ Delegaciones"],
-      "yucatan-i6": isEn
-        ? ["Robotics Origin", "Mechanical Intake", "3rd Place"]
-        : ["Origen Vocacional", "Mecanismo Recolector", "3.er Lugar"],
-    };
-    return tagsMap[slug] ?? [];
-  }
-</script>
-
 <script lang="ts">
   import Icon from "$lib/components/Icon.svelte";
   import { SITE_CONFIG } from "$lib/config/site";
@@ -31,17 +11,47 @@
   let { data }: Props = $props();
   let c = $derived(data.content);
   let cvFile = $derived(SITE_CONFIG.cvFiles[data.locale]);
-  let isEn = $derived(data.locale === "en");
 
-  let profileImgSrc = $state<string>(SITE_CONFIG.profileImage.src);
+  let personJsonLd = $derived(
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: SITE_CONFIG.authorName,
+      url: `${SITE_CONFIG.domain}/${data.locale}`,
+      image: `${SITE_CONFIG.domain}${SITE_CONFIG.heroImage.src}`,
+      description: c.meta.homeDescription,
+      email: SITE_CONFIG.contactEmail,
+      sameAs: [SITE_CONFIG.githubProfileUrl],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Mérida",
+        addressRegion: "Yucatán",
+        addressCountry: "MX",
+      },
+      knowsAbout: [
+        "Mechanical design",
+        "Embedded systems",
+        "FTC robotics",
+        "Web development",
+      ],
+    }).replace(/</g, "\\u003c"),
+  );
+
+  function heroSrcSet(format: "avif" | "webp") {
+    return SITE_CONFIG.heroImage.widths
+      .map((w) => `/images/hero-robot-${w}.${format} ${w}w`)
+      .join(", ");
+  }
+
+  let heroImgSrc = $state<string>(SITE_CONFIG.heroImage.src);
   let photoUnavailable = $state<boolean>(false);
 
   function handlePhotoError() {
     if (
-      SITE_CONFIG.profileImage.fallbackSrc &&
-      profileImgSrc !== SITE_CONFIG.profileImage.fallbackSrc
+      SITE_CONFIG.heroImage.fallbackSrc &&
+      heroImgSrc !== SITE_CONFIG.heroImage.fallbackSrc
     ) {
-      profileImgSrc = SITE_CONFIG.profileImage.fallbackSrc;
+      heroImgSrc = SITE_CONFIG.heroImage.fallbackSrc;
     } else {
       photoUnavailable = true;
     }
@@ -51,6 +61,11 @@
 <svelte:head>
   <title>{c.meta.siteTitle}</title>
   <meta name="description" content={c.meta.homeDescription} />
+  <meta property="og:title" content={c.meta.siteTitle} />
+  <meta property="og:description" content={c.meta.homeDescription} />
+  <meta name="twitter:title" content={c.meta.siteTitle} />
+  <meta name="twitter:description" content={c.meta.homeDescription} />
+  {@html `<script type="application/ld+json">${personJsonLd}</script>`}
 </svelte:head>
 
 <div class="container">
@@ -98,21 +113,15 @@
 
       <!-- Ficha técnica de stack directo en el Hero (alineada con base de métricas) -->
       <div class="hero-spec-bar anim-fade-up anim-delay-4">
-        <span class="spec-label"
-          >{isEn ? "CORE STACK:" : "STACK PRINCIPAL:"}</span
-        >
-        <span class="spec-values"
-          >ONSHAPE CAD · C++ / JAVA · KICAD · SVELTEKIT</span
-        >
+        <span class="spec-label">{c.hero.coreStackLabel}</span>
+        <span class="spec-values">{c.hero.coreStackValues}</span>
       </div>
     </div>
 
     <!-- ═══ PHOTO PLACE / CAD WIREFRAME & HEADLINE STATS ═══ -->
     <aside
       class="hero-sidebar anim-fade-up anim-delay-2"
-      aria-label={isEn
-        ? "Personal record & highlights"
-        : "Registro personal y datos destacados"}
+      aria-label={c.hero.sidebarLabel}
     >
       <div class="photo-frame">
         <div class="photo-corner top-left" aria-hidden="true">+</div>
@@ -121,12 +130,36 @@
         <div class="photo-corner bottom-right" aria-hidden="true">+</div>
 
         <div class="photo-container">
-          {#if !photoUnavailable}
+          {#if !photoUnavailable && heroImgSrc === SITE_CONFIG.heroImage.src}
+            <picture>
+              <source
+                type="image/avif"
+                srcset={heroSrcSet('avif')}
+                sizes={SITE_CONFIG.heroImage.sizes}
+              />
+              <source
+                type="image/webp"
+                srcset={heroSrcSet('webp')}
+                sizes={SITE_CONFIG.heroImage.sizes}
+              />
+              <img
+                src={heroImgSrc}
+                alt={c.hero.imageAlt}
+                width={SITE_CONFIG.heroImage.width}
+                height={SITE_CONFIG.heroImage.height}
+                fetchpriority="high"
+                decoding="async"
+                onerror={handlePhotoError}
+                class="profile-image"
+              />
+            </picture>
+          {:else if !photoUnavailable}
             <img
-              src={profileImgSrc}
-              alt={SITE_CONFIG.profileImage.alt}
-              width="480"
-              height="330"
+              src={heroImgSrc}
+              alt={c.hero.imageAlt}
+              width={SITE_CONFIG.heroImage.width}
+              height={SITE_CONFIG.heroImage.height}
+              decoding="async"
               onerror={handlePhotoError}
               class="profile-image"
             />
@@ -135,7 +168,7 @@
             <div
               class="cad-placeholder"
               role="img"
-              aria-label="Diagrama técnico de chasis robótico"
+              aria-label={c.hero.diagramLabel}
             >
               <svg
                 viewBox="0 0 360 248"
@@ -246,7 +279,7 @@
         </div>
 
         <div class="photo-caption">
-          <span class="caption-name">{SITE_CONFIG.brandWordmark}</span>
+          <span class="caption-name">{c.hero.imageCaption}</span>
           <span class="caption-location">
             <Icon name="pin" size={12} />
             {c.hero.location}
@@ -256,30 +289,12 @@
 
       <div class="hero-highlights">
         <ul class="highlight-list">
-          <li class="highlight-item">
-            <span class="highlight-number">10+</span>
-            <span class="highlight-label"
-              >{isEn ? "Robotics Competitions" : "Competencias robótica"}</span
-            >
-          </li>
-          <li class="highlight-item">
-            <span class="highlight-number">4</span>
-            <span class="highlight-label"
-              >{isEn ? "National Awards" : "Premios nacionales"}</span
-            >
-          </li>
-          <li class="highlight-item">
-            <span class="highlight-number">1</span>
-            <span class="highlight-label"
-              >{isEn ? "Intl. Design Award" : "Premio internacional"}</span
-            >
-          </li>
-          <li class="highlight-item">
-            <span class="highlight-number">60+</span>
-            <span class="highlight-label"
-              >{isEn ? "MUN Delegations Led" : "Delegaciones MUN coord."}</span
-            >
-          </li>
+          {#each c.hero.stats as stat}
+            <li class="highlight-item">
+              <span class="highlight-number">{stat.value}</span>
+              <span class="highlight-label">{stat.label}</span>
+            </li>
+          {/each}
         </ul>
       </div>
     </aside>
@@ -289,32 +304,14 @@
   <div
     class="facts-strip anim-fade-up anim-delay-4"
     role="list"
-    aria-label={isEn ? "Quick facts" : "Datos rápidos"}
+    aria-label={c.hero.quickFactsLabel}
   >
-    <span class="fact-item meta-text" role="listitem">
-      <Icon name="academic" size={14} class="fact-icon" />
-      <span
-        >{isEn
-          ? "High School Senior · Class of 2027"
-          : "Bachillerato · Gen. 2024–2027"}</span
-      >
-    </span>
-    <span class="fact-item meta-text" role="listitem">
-      <Icon name="globe" size={14} class="fact-icon" />
-      <span
-        >{isEn
-          ? "Spanish (Native) · English (Professional)"
-          : "Español (Nativo) · Inglés (Profesional)"}</span
-      >
-    </span>
-    <span class="fact-item meta-text" role="listitem">
-      <Icon name="cog" size={14} class="fact-icon" />
-      <span
-        >{isEn
-          ? "Robotics · CAD · Web Dev · Leadership"
-          : "Robótica · CAD · Desarrollo web · Liderazgo"}</span
-      >
-    </span>
+    {#each c.hero.quickFacts as fact}
+      <span class="fact-item meta-text" role="listitem">
+        <Icon name={fact.icon} size={14} class="fact-icon" />
+        <span>{fact.text}</span>
+      </span>
+    {/each}
   </div>
 
   <!-- ═══ METHOD — Editorial Timeline & FEV Framework ═══ -->
@@ -323,7 +320,7 @@
     aria-labelledby="metodo-heading"
   >
     <div class="stack-sm">
-      <span class="eyebrow">01 / Metodología</span>
+      <span class="eyebrow">{c.method.eyebrow}</span>
       <h2 id="metodo-heading">{c.method.heading}</h2>
       <p class="meta-text">{c.method.intro}</p>
     </div>
@@ -358,13 +355,8 @@
           {#each c.method.fevPillars as pillar}
             <div class="pillar-card">
               <dt>
-                {#if isEn && pillar.term.includes("(")}
-                  {pillar.term.split("(")[0]}(<span lang="es"
-                    >{pillar.term.split("(")[1].replace(")", "")}</span
-                  >)
-                {:else}
-                  {pillar.term}
-                {/if}
+                {pillar.term}{#if pillar.termAlt}
+                  (<span lang="es">{pillar.termAlt}</span>){/if}
               </dt>
               <dd>{pillar.definition}</dd>
             </div>
@@ -382,7 +374,7 @@
   >
     <div class="editorial-grid projects-intro">
       <div class="stack-sm">
-        <span class="eyebrow">02 / Trayectoria</span>
+        <span class="eyebrow">{c.projectsSection.eyebrow}</span>
         <h2 id="proyectos-heading">{c.projectsSection.heading}</h2>
       </div>
       <div>
@@ -392,7 +384,6 @@
 
     <div class="projects-ledger">
       {#each c.projectsSection.items as project}
-        {@const tags = getProjectTags(project.slug, isEn)}
         <article
           class="project-entry editorial-grid"
           class:is-flagship={project.tier === "flagship"}
@@ -400,9 +391,9 @@
           <div class="stack-sm project-meta-col">
             <p class="meta-text">{project.period}</p>
             <p class="meta-text">{project.collaborationModel}</p>
-            {#if tags.length > 0}
+            {#if project.tags.length > 0}
               <div class="project-tags">
-                {#each tags as tag}
+                {#each project.tags as tag}
                   <span class="tag">{tag}</span>
                 {/each}
               </div>
@@ -453,7 +444,7 @@
     aria-labelledby="complementarias-heading"
   >
     <div class="stack-sm">
-      <span class="eyebrow">03 / Dimensiones</span>
+      <span class="eyebrow">{c.complementary.eyebrow}</span>
       <h2 id="complementarias-heading">{c.complementary.heading}</h2>
       <p class="meta-text">{c.complementary.intro}</p>
     </div>

@@ -25,8 +25,28 @@ export const contentEs: SiteContent = {
     primaryCta: "Descargar CV (PDF · ES)",
     secondaryCta: "Explorar trayectoria y proyectos",
     location: "Mérida, Yucatán, México",
+    coreStackLabel: 'STACK PRINCIPAL:',
+    coreStackValues: 'ONSHAPE CAD · C++ / JAVA · KICAD · SVELTEKIT',
+    imageAlt:
+      'Render CAD isométrico del chasis del robot de competencia del equipo FTC 22571, con mecanismos de recolección, tracción y torreta visibles.',
+    imageCaption: 'Equipo FTC 22571 · Render CAD',
+    diagramLabel: 'Diagrama técnico de chasis robótico',
+    sidebarLabel: 'Render del robot y datos destacados',
+    quickFactsLabel: 'Datos rápidos',
+    stats: [
+      { value: '10+', label: 'Competencias de robótica' },
+      { value: '4', label: 'Premios nacionales' },
+      { value: '1', label: 'Premio internacional' },
+      { value: '60+', label: 'Delegaciones MUN coord.' }
+    ],
+    quickFacts: [
+      { icon: 'academic', text: 'Bachillerato · Gen. 2024–2027' },
+      { icon: 'globe', text: 'Español (Nativo) · Inglés (Profesional)' },
+      { icon: 'cog', text: 'Robótica · CAD · Desarrollo web · Liderazgo' }
+    ]
   },
   method: {
+    eyebrow: '01 / Metodología',
     heading: 'Cómo pienso y construyo',
     intro:
       'Más allá de las herramientas técnicas, mi trabajo responde a una misma forma de abordar problemas complejos en ingeniería y organización de equipos.',
@@ -75,6 +95,7 @@ export const contentEs: SiteContent = {
     ]
   },
   projectsSection: {
+    eyebrow: '02 / Trayectoria',
     heading: 'Hitos y proyectos ancla',
     intro:
       'Cuatro experiencias que resumen mi evolución durante la preparatoria: desde mi primer prototipo en secundaria hasta el liderazgo técnico internacional, la cofundación de un equipo independiente y la organización horizontal de un modelo de Naciones Unidas.',
@@ -87,6 +108,11 @@ export const contentEs: SiteContent = {
       sectionExecution: 'Ejecución y trabajo en equipo',
       sectionOutcomes: 'Resultados verificables y aprendizajes',
       sectionEvidence: 'Evidencia documental',
+      glanceHeading: 'De un vistazo',
+      glanceRole: 'Rol',
+      glancePeriod: 'Periodo',
+      glanceOutcome: 'Resultado clave',
+      glanceFocus: 'Enfoque',
       attributionHeading: 'Atribución de rol y autoría',
       curatingNote:
         'Evidencia en proceso de curaduría: repositorio, modelo CAD o registro fotográfico en organización para enlace público.',
@@ -104,6 +130,7 @@ export const contentEs: SiteContent = {
         roleSummary: 'Constructor, Capitán de Diseño y Drive Coach',
         collaborationModel: 'Equipo escolar de preparatoria pública',
         contextNote: 'Temporadas Into the Deep (2024–2025) y Decode (2025–2026)',
+        tags: ['Robótica FTC', 'Flujo CAD', 'Drive Coach'],
         executiveSummary:
           'Comencé en primer año sin experiencia previa en FTC y evolucioné hasta asumir la capitanía de diseño y la dirección estratégica en cancha. Impulsé la transición a ingeniería 100% CAD-first bajo la metodología FEV, llevando al equipo a clasificar al Campeonato Nacional en ambas temporadas y a ganar el Design Award 1st Place en el evento internacional Mexico Premier Event.',
         keyOutcome:
@@ -132,17 +159,19 @@ export const contentEs: SiteContent = {
           evidence: [
             {
               type: 'onshape',
-              title: 'Modelos CAD del robot — Temporada Decode (Onshape)',
+              title: 'CAD del robot del Mexico Premier Event (Onshape)',
               description:
-                'Ensambles completos desarrollados bajo el flujo CAD-first y metodología FEV.',
-              status: 'curating'
+                'Modelo paramétrico completo del robot, desarrollado bajo el flujo CAD-first y la metodología FEV.',
+              status: 'active',
+              url: 'https://cad.onshape.com/documents/9996eb6f6e3343715753fcfa'
             },
             {
               type: 'github',
-              title: 'Lógica de corrección de ángulo, velocidad y auto-apuntado',
+              title: 'Código del robot Aztecbot 22571 en el Premier Event',
               description:
-                'Código de control implementado para el robot del Mexico Premier Event.',
-              status: 'curating'
+                'Código del robot del Mexico Premier Event, incluida la lógica de corrección automática de ángulo y velocidad de tiro y de auto-apuntado a la canasta.',
+              status: 'active',
+              url: 'https://github.com/manu2w2/Aztecbot-22571'
             },
             {
               type: 'photo',
@@ -162,6 +191,7 @@ export const contentEs: SiteContent = {
         roleSummary: 'Cofundador, Programador Principal y Mentor Técnico',
         collaborationModel: 'Equipo independiente fuera de estructura escolar',
         contextNote: 'Construcción organizativa y técnica desde cero',
+        tags: ['Cofundación', 'Arquitectura Java', 'Web'],
         executiveSummary:
           'Cofundé un equipo de robótica FTC completamente independiente de una institución académica. Asumo la programación principal tanto del robot de competencia como de la plataforma web del equipo, además de acompañar el diseño y armado físico transfiriendo la experiencia acumulada en temporadas anteriores.',
         keyOutcome:
@@ -188,17 +218,27 @@ export const contentEs: SiteContent = {
           evidence: [
             {
               type: 'github',
-              title: 'Código base de control del robot Velocity Bucks',
+              title: 'Código de control del robot Velocity Bucks (temporada BIOBUZZ)',
               description:
                 'Arquitectura modular por subsistemas y comandos para competencia FTC.',
-              status: 'curating'
+              status: 'active',
+              url: 'https://github.com/manu2w2/BIOBUZZ_velocity_bucks'
             },
             {
-              type: 'website',
-              title: 'Plataforma web oficial del equipo Velocity Bucks',
+              type: 'onshape',
+              title: 'CAD del robot Velocity Bucks (temporada BIOBUZZ, Onshape)',
               description:
-                'Sitio informativo y de vinculación desarrollado para el equipo.',
-              status: 'curating'
+                'Modelo paramétrico completo del robot de la temporada BIOBUZZ, diseñado bajo el flujo CAD-first.',
+              status: 'active',
+              url: 'https://cad.onshape.com/documents/69a50231a2f32c50d2c20f8f/w/252a05a2cc4d919d4cb5bba9/e/061ff5da347421369982ad5b'
+            },
+            {
+              type: 'github',
+              title: 'Código de la página web del equipo Velocity Bucks',
+              description:
+                'Código fuente del sitio web del equipo, que desarrollo y mantengo.',
+              status: 'active',
+              url: 'https://github.com/manu2w2/VelocityBucks'
             }
           ]
         }
@@ -211,6 +251,7 @@ export const contentEs: SiteContent = {
         roleSummary: 'Representante de la Comisión de Valladolid (Dirección operativa / SG)',
         collaborationModel: 'Equipo horizontal de iguales junto a consultorías',
         contextNote: 'Más de 60 delegaciones participantes en 6 comités',
+        tags: ['Modelo ONU', 'Liderazgo Horizontal', '60+ Delegaciones'],
         executiveSummary:
           'Como representante de la Comisión de Valladolid dentro de SMMUN 2027 "Our Spark", asumí responsabilidades equivalentes a la Secretaría General en la creación, logística, vinculación y ejecución de ValladolidMUN. Trabajamos como un equipo horizontal de iguales junto a las consultorías de logística, finanzas y vinculación, logrando reunir a más de 60 delegaciones en 6 comités.',
         keyOutcome:
@@ -252,6 +293,7 @@ export const contentEs: SiteContent = {
         roleSummary: 'Diseño, armado y programación en dupla',
         collaborationModel: 'Equipo de dos estudiantes',
         contextNote: '3.er lugar en categoría de robótica',
+        tags: ['Origen Vocacional', 'Mecanismo Recolector', '3.er Lugar'],
         executiveSummary:
           'Mi primer acercamiento formal a la robótica de competencia: junto con un amigo diseñé, armé y programé un robot recolector capaz de recoger y depositar bolas de papel y tapas en un contenedor. Obtener el tercer lugar confirmó que podía transformar una idea en una máquina funcional.',
         keyOutcome:
@@ -286,6 +328,7 @@ export const contentEs: SiteContent = {
     ]
   },
   complementary: {
+    eyebrow: '03 / Dimensiones',
     heading: 'Dimensiones complementarias',
     intro:
       'La ingeniería cobra sentido cuando dialoga con la comunidad, la enseñanza y la expresión creativa. Estas actividades forman parte integral de quién soy fuera del taller de competencia.',

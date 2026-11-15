@@ -37,6 +37,27 @@
     <p class="role-line">{project.roleSummary}</p>
     <p>{project.executiveSummary}</p>
 
+    <section class="glance" aria-label={labels.glanceHeading}>
+      <dl class="glance-grid">
+        <div>
+          <dt>{labels.glanceRole}</dt>
+          <dd>{project.roleSummary}</dd>
+        </div>
+        <div>
+          <dt>{labels.glancePeriod}</dt>
+          <dd>{project.period}</dd>
+        </div>
+        <div>
+          <dt>{labels.glanceFocus}</dt>
+          <dd>{project.tags.join(' · ')}</dd>
+        </div>
+        <div class="glance-wide">
+          <dt>{labels.glanceOutcome}</dt>
+          <dd>{project.keyOutcome}</dd>
+        </div>
+      </dl>
+    </section>
+
     <nav aria-label={labels.jumpHeading} class="jump-nav">
       <ul class="jump-list">
         <li><a href="#contexto">{labels.sectionContext}</a></li>
@@ -194,6 +215,38 @@
   .role-line {
     font-weight: 600;
     color: var(--accent-primary);
+  }
+
+  .glance {
+    margin-top: 0.5rem;
+    padding: 1.25rem;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-structural);
+  }
+
+  .glance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1.25rem 1.5rem;
+    margin: 0;
+  }
+
+  .glance-wide {
+    grid-column: 1 / -1;
+  }
+
+  .glance dt {
+    font-family: var(--font-mono);
+    font-size: var(--text-meta);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 0.25rem;
+  }
+
+  .glance dd {
+    margin: 0;
+    color: var(--text-primary);
   }
 
   .jump-nav {

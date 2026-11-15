@@ -24,6 +24,7 @@ export interface AnchorProject {
   roleSummary: string;
   collaborationModel: string;
   contextNote: string;
+  tags: string[];
   executiveSummary: string;
   keyOutcome: string;
   caseStudy: {
@@ -63,8 +64,24 @@ export interface SiteContent {
     coreStatement: string;
     primaryCta: string;
     secondaryCta: string;
+    coreStackLabel: string;
+    coreStackValues: string;
+    imageAlt: string;
+    imageCaption: string;
+    diagramLabel: string;
+    sidebarLabel: string;
+    quickFactsLabel: string;
+    stats: Array<{
+      value: string;
+      label: string;
+    }>;
+    quickFacts: Array<{
+      icon: 'academic' | 'globe' | 'cog';
+      text: string;
+    }>;
   };
   method: {
+    eyebrow: string;
     heading: string;
     intro: string;
     philosophyTitle: string;
@@ -78,10 +95,12 @@ export interface SiteContent {
     fevSummary: string;
     fevPillars: Array<{
       term: string;
+      termAlt?: string;
       definition: string;
     }>;
   };
   projectsSection: {
+    eyebrow: string;
     heading: string;
     intro: string;
     readCaseLabel: string;
@@ -93,6 +112,11 @@ export interface SiteContent {
       sectionExecution: string;
       sectionOutcomes: string;
       sectionEvidence: string;
+  glanceHeading: string;
+  glanceRole: string;
+  glancePeriod: string;
+  glanceOutcome: string;
+  glanceFocus: string;
       attributionHeading: string;
       curatingNote: string;
       externalLinkHint: string;
@@ -103,6 +127,7 @@ export interface SiteContent {
     items: AnchorProject[];
   };
   complementary: {
+    eyebrow: string;
     heading: string;
     intro: string;
     items: ComplementaryFacet[];

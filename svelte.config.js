@@ -22,6 +22,7 @@ const config = {
       },
       entries: [
         '/',
+        '/sitemap.xml',
         '/es',
         '/en',
         '/es/cv',

@@ -25,8 +25,28 @@ export const contentEn: SiteContent = {
     primaryCta: "Download CV (PDF · EN)",
     secondaryCta: "Explore trajectory & projects",
     location: "Mérida, Yucatán, Mexico",
+    coreStackLabel: 'CORE STACK:',
+    coreStackValues: 'ONSHAPE CAD · C++ / JAVA · KICAD · SVELTEKIT',
+    imageAlt:
+      'Isometric CAD render of the FTC Team 22571 competition robot chassis, with intake, drivetrain and turret assemblies visible.',
+    imageCaption: 'FTC Team 22571 · CAD render',
+    diagramLabel: 'Technical diagram of a robotic chassis',
+    sidebarLabel: 'Robot render and highlights',
+    quickFactsLabel: 'Quick facts',
+    stats: [
+      { value: '10+', label: 'Robotics Competitions' },
+      { value: '4', label: 'National Awards' },
+      { value: '1', label: 'Intl. Design Award' },
+      { value: '60+', label: 'MUN Delegations Led' }
+    ],
+    quickFacts: [
+      { icon: 'academic', text: 'High School Senior · Class of 2027' },
+      { icon: 'globe', text: 'Spanish (Native) · English (Professional)' },
+      { icon: 'cog', text: 'Robotics · CAD · Web Dev · Leadership' }
+    ]
   },
   method: {
+    eyebrow: '01 / Method',
     heading: 'How I Think and Build',
     intro:
       'Beyond specific tools or programming languages, my work follows a consistent decision-making framework across engineering and collaborative leadership.',
@@ -61,20 +81,24 @@ export const contentEn: SiteContent = {
       'In mechanical design and competitive robotics, every subsystem is evaluated against three core criteria:',
     fevPillars: [
       {
-        term: 'Reliability (Fiabilidad)',
+        term: 'Reliability',
+        termAlt: 'Fiabilidad',
         definition: 'Consistent mechanical and software response under real match conditions.'
       },
       {
-        term: 'Efficiency (Eficiencia)',
+        term: 'Efficiency',
+        termAlt: 'Eficiencia',
         definition: 'Maximizing output from every component, weight budget, and cycle second.'
       },
       {
-        term: 'Feasibility (Viabilidad)',
+        term: 'Feasibility',
+        termAlt: 'Viabilidad',
         definition: 'Manufacturable, maintainable, and realistic within our timeline and tools.'
       }
     ]
   },
   projectsSection: {
+    eyebrow: '02 / Track record',
     heading: 'Anchor Milestones & Projects',
     intro:
       'Four experiences that define my three-year high school trajectory: from building my first prototype in middle school to international robotics design leadership, co-founding an independent team, and co-organizing a Model UN conference.',
@@ -87,6 +111,11 @@ export const contentEn: SiteContent = {
       sectionExecution: 'Execution and teamwork',
       sectionOutcomes: 'Verified outcomes and lessons',
       sectionEvidence: 'Documentary evidence',
+      glanceHeading: 'At a glance',
+      glanceRole: 'Role',
+      glancePeriod: 'Period',
+      glanceOutcome: 'Key outcome',
+      glanceFocus: 'Focus',
       attributionHeading: 'Role and authorship attribution',
       curatingNote:
         'Evidence currently being curated: repository, CAD assembly, or documentary photo being organized for public linking.',
@@ -104,6 +133,7 @@ export const contentEn: SiteContent = {
         roleSummary: 'Builder, Design Captain, and Drive Coach',
         collaborationModel: 'Public high school robotics team in Mexico',
         contextNote: 'Into the Deep (2024–2025) and Decode (2025–2026) seasons',
+        tags: ['FTC Robotics', 'CAD-First', 'Drive Coach'],
         executiveSummary:
           'I joined Aztecbot in my first year of high school with zero prior FTC experience and grew into Design Captain and Drive Coach. By leading a shift toward 100% CAD-first engineering under our FEV methodology, our public-school team reached the Mexican National Championship twice and won the Design Award 1st Place at the international Mexico Premier Event.',
         keyOutcome:
@@ -132,17 +162,19 @@ export const contentEn: SiteContent = {
           evidence: [
             {
               type: 'onshape',
-              title: 'Decode Robot CAD Assemblies (Onshape)',
+              title: 'Mexico Premier Event Robot CAD (Onshape)',
               description:
-                'Full-robot parametric models built under our CAD-first and FEV workflow.',
-              status: 'curating'
+                'Full-robot parametric model built under our CAD-first and FEV workflow.',
+              status: 'active',
+              url: 'https://cad.onshape.com/documents/9996eb6f6e3343715753fcfa'
             },
             {
               type: 'github',
-              title: 'Automated Shot Angle, Velocity & Auto-Aim Logic',
+              title: 'Aztecbot 22571 Premier Event Robot Codebase',
               description:
-                'Control logic developed for the Mexico Premier Event robot.',
-              status: 'curating'
+                'Robot code from the Mexico Premier Event, including the automated shot angle and velocity correction and basket auto-aim logic.',
+              status: 'active',
+              url: 'https://github.com/manu2w2/Aztecbot-22571'
             },
             {
               type: 'photo',
@@ -162,6 +194,7 @@ export const contentEn: SiteContent = {
         roleSummary: 'Co-Founder, Lead Programmer, and Technical Mentor',
         collaborationModel: 'Independent community team outside a school structure',
         contextNote: 'Building technical and organizational capacity from scratch',
+        tags: ['Team Founder', 'Java Architecture', 'Web Dev'],
         executiveSummary:
           'I co-founded an independent FIRST Tech Challenge team operating outside any single school institution. I serve as lead programmer for both the competition robot and the team website while mentoring teammates in CAD design and mechanical assembly.',
         keyOutcome:
@@ -188,17 +221,27 @@ export const contentEn: SiteContent = {
           evidence: [
             {
               type: 'github',
-              title: 'Velocity Bucks Robot Control Codebase',
+              title: 'Velocity Bucks Robot Control Codebase (BIOBUZZ season)',
               description:
                 'Modular subsystem and command-based FTC software architecture.',
-              status: 'curating'
+              status: 'active',
+              url: 'https://github.com/manu2w2/BIOBUZZ_velocity_bucks'
             },
             {
-              type: 'website',
-              title: 'Velocity Bucks Official Team Website',
+              type: 'onshape',
+              title: 'Velocity Bucks Robot CAD (BIOBUZZ season, Onshape)',
               description:
-                'Public outreach and team documentation site.',
-              status: 'curating'
+                'Full-robot parametric model for the BIOBUZZ season, designed CAD-first.',
+              status: 'active',
+              url: 'https://cad.onshape.com/documents/69a50231a2f32c50d2c20f8f/w/252a05a2cc4d919d4cb5bba9/e/061ff5da347421369982ad5b'
+            },
+            {
+              type: 'github',
+              title: 'Velocity Bucks Team Website Codebase',
+              description:
+                'Source code of the team website, which I develop and maintain.',
+              status: 'active',
+              url: 'https://github.com/manu2w2/VelocityBucks'
             }
           ]
         }
@@ -211,6 +254,7 @@ export const contentEn: SiteContent = {
         roleSummary: 'Valladolid Commission Representative (Secretary-General operational scope)',
         collaborationModel: 'Horizontal team of equals alongside specialized consultancies',
         contextNote: '60+ participating delegations across 6 committees',
+        tags: ['Model UN', 'Horizontal Leadership', '60+ Delegations'],
         executiveSummary:
           'As Representative of the Valladolid Commission within SMMUN 2027 "Our Spark", I carried out operational responsibilities equivalent to Secretary-General for the creation, logistics, outreach, and execution of ValladolidMUN. Working in a horizontal team of equals alongside the Logistics, Finance, and Outreach consultancies, we convened over 60 delegations across 6 committees.',
         keyOutcome:
@@ -252,6 +296,7 @@ export const contentEn: SiteContent = {
         roleSummary: 'Two-person design, assembly, and programming',
         collaborationModel: 'Student duo',
         contextNote: '3rd Place in Robotics category',
+        tags: ['Robotics Origin', 'Mechanical Intake', '3rd Place'],
         executiveSummary:
           'My first competitive robotics build: working alongside a friend, I designed, assembled, and programmed a collector robot to gather paper balls and bottle caps and deposit them into a target container. Earning 3rd place proved I could turn an idea into a working machine.',
         keyOutcome:
@@ -286,6 +331,7 @@ export const contentEn: SiteContent = {
     ]
   },
   complementary: {
+    eyebrow: '03 / Dimensions',
     heading: 'Complementary Dimensions',
     intro:
       'Engineering gains depth when connected to teaching, community service, and creative expression. These commitments reflect who I am beyond competition.',

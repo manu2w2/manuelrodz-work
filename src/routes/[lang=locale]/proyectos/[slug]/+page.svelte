@@ -12,6 +12,8 @@
 <svelte:head>
   <title>{data.project.title} — Manuel Rodríguez</title>
   <meta name="description" content={data.project.executiveSummary} />
+  <meta property="og:title" content="{data.project.title} — Manuel Rodríguez" />
+  <meta property="og:description" content={data.project.executiveSummary} />
 </svelte:head>
 
 <CaseStudyView

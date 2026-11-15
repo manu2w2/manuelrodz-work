@@ -19,6 +19,8 @@
 <svelte:head>
   <title>{cv.heading} — Manuel Rodríguez</title>
   <meta name="description" content={data.content.meta.cvDescription} />
+  <meta property="og:title" content="{cv.heading} — Manuel Rodríguez" />
+  <meta property="og:description" content={data.content.meta.cvDescription} />
 </svelte:head>
 
 <article class="container cv-page">
