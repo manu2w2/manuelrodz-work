@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   contactEmail: 'contact@manuelrodz.work',
   githubProfileUrl: 'https://github.com/manu2w2',
   profileImage: {
-    src: '/images/hero-robot.png',
+    src: '/images/hero-robot.jpg',
     fallbackSrc: '/images/manuel-rodriguez-placeholder.svg',
     alt: 'Manuel Enrique Rodríguez Nicolás — Fotografía documental de perfil',
     caption: 'Mérida, Yucatán · 2026'
