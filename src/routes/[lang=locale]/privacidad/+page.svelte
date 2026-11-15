@@ -12,6 +12,8 @@
 <svelte:head>
   <title>{privacy.heading} — Manuel Rodríguez</title>
   <meta name="description" content={data.content.meta.privacyDescription} />
+  <meta property="og:title" content="{privacy.heading} — Manuel Rodríguez" />
+  <meta property="og:description" content={data.content.meta.privacyDescription} />
 </svelte:head>
 
 <article class="container privacy-article stack-lg">
