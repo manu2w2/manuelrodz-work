@@ -108,6 +108,11 @@ export const contentEs: SiteContent = {
       sectionExecution: 'Ejecución y trabajo en equipo',
       sectionOutcomes: 'Resultados verificables y aprendizajes',
       sectionEvidence: 'Evidencia documental',
+      glanceHeading: 'De un vistazo',
+      glanceRole: 'Rol',
+      glancePeriod: 'Periodo',
+      glanceOutcome: 'Resultado clave',
+      glanceFocus: 'Enfoque',
       attributionHeading: 'Atribución de rol y autoría',
       curatingNote:
         'Evidencia en proceso de curaduría: repositorio, modelo CAD o registro fotográfico en organización para enlace público.',
@@ -154,17 +159,19 @@ export const contentEs: SiteContent = {
           evidence: [
             {
               type: 'onshape',
-              title: 'Modelos CAD del robot — Temporada Decode (Onshape)',
+              title: 'CAD del robot del Mexico Premier Event (Onshape)',
               description:
-                'Ensambles completos desarrollados bajo el flujo CAD-first y metodología FEV.',
-              status: 'curating'
+                'Modelo paramétrico completo del robot, desarrollado bajo el flujo CAD-first y la metodología FEV.',
+              status: 'active',
+              url: 'https://cad.onshape.com/documents/9996eb6f6e3343715753fcfa'
             },
             {
               type: 'github',
-              title: 'Lógica de corrección de ángulo, velocidad y auto-apuntado',
+              title: 'Código del robot Aztecbot 22571 en el Premier Event',
               description:
-                'Código de control implementado para el robot del Mexico Premier Event.',
-              status: 'curating'
+                'Código del robot del Mexico Premier Event, incluida la lógica de corrección automática de ángulo y velocidad de tiro y de auto-apuntado a la canasta.',
+              status: 'active',
+              url: 'https://github.com/manu2w2/Aztecbot-22571'
             },
             {
               type: 'photo',
@@ -211,17 +218,27 @@ export const contentEs: SiteContent = {
           evidence: [
             {
               type: 'github',
-              title: 'Código base de control del robot Velocity Bucks',
+              title: 'Código de control del robot Velocity Bucks (temporada BIOBUZZ)',
               description:
                 'Arquitectura modular por subsistemas y comandos para competencia FTC.',
-              status: 'curating'
+              status: 'active',
+              url: 'https://github.com/manu2w2/BIOBUZZ_velocity_bucks'
             },
             {
-              type: 'website',
-              title: 'Plataforma web oficial del equipo Velocity Bucks',
+              type: 'onshape',
+              title: 'CAD del robot Velocity Bucks (temporada BIOBUZZ, Onshape)',
               description:
-                'Sitio informativo y de vinculación desarrollado para el equipo.',
-              status: 'curating'
+                'Modelo paramétrico completo del robot de la temporada BIOBUZZ, diseñado bajo el flujo CAD-first.',
+              status: 'active',
+              url: 'https://cad.onshape.com/documents/69a50231a2f32c50d2c20f8f/w/252a05a2cc4d919d4cb5bba9/e/061ff5da347421369982ad5b'
+            },
+            {
+              type: 'github',
+              title: 'Código de la página web del equipo Velocity Bucks',
+              description:
+                'Código fuente del sitio web del equipo, que desarrollo y mantengo.',
+              status: 'active',
+              url: 'https://github.com/manu2w2/VelocityBucks'
             }
           ]
         }

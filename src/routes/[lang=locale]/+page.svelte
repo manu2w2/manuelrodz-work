@@ -37,6 +37,12 @@
     }).replace(/</g, "\\u003c"),
   );
 
+  function heroSrcSet(format: "avif" | "webp") {
+    return SITE_CONFIG.heroImage.widths
+      .map((w) => `/images/hero-robot-${w}.${format} ${w}w`)
+      .join(", ");
+  }
+
   let heroImgSrc = $state<string>(SITE_CONFIG.heroImage.src);
   let photoUnavailable = $state<boolean>(false);
 
@@ -124,13 +130,35 @@
         <div class="photo-corner bottom-right" aria-hidden="true">+</div>
 
         <div class="photo-container">
-          {#if !photoUnavailable}
+          {#if !photoUnavailable && heroImgSrc === SITE_CONFIG.heroImage.src}
+            <picture>
+              <source
+                type="image/avif"
+                srcset={heroSrcSet('avif')}
+                sizes={SITE_CONFIG.heroImage.sizes}
+              />
+              <source
+                type="image/webp"
+                srcset={heroSrcSet('webp')}
+                sizes={SITE_CONFIG.heroImage.sizes}
+              />
+              <img
+                src={heroImgSrc}
+                alt={c.hero.imageAlt}
+                width={SITE_CONFIG.heroImage.width}
+                height={SITE_CONFIG.heroImage.height}
+                fetchpriority="high"
+                decoding="async"
+                onerror={handlePhotoError}
+                class="profile-image"
+              />
+            </picture>
+          {:else if !photoUnavailable}
             <img
               src={heroImgSrc}
               alt={c.hero.imageAlt}
               width={SITE_CONFIG.heroImage.width}
               height={SITE_CONFIG.heroImage.height}
-              fetchpriority="high"
               decoding="async"
               onerror={handlePhotoError}
               class="profile-image"

@@ -111,6 +111,11 @@ export const contentEn: SiteContent = {
       sectionExecution: 'Execution and teamwork',
       sectionOutcomes: 'Verified outcomes and lessons',
       sectionEvidence: 'Documentary evidence',
+      glanceHeading: 'At a glance',
+      glanceRole: 'Role',
+      glancePeriod: 'Period',
+      glanceOutcome: 'Key outcome',
+      glanceFocus: 'Focus',
       attributionHeading: 'Role and authorship attribution',
       curatingNote:
         'Evidence currently being curated: repository, CAD assembly, or documentary photo being organized for public linking.',
@@ -157,17 +162,19 @@ export const contentEn: SiteContent = {
           evidence: [
             {
               type: 'onshape',
-              title: 'Decode Robot CAD Assemblies (Onshape)',
+              title: 'Mexico Premier Event Robot CAD (Onshape)',
               description:
-                'Full-robot parametric models built under our CAD-first and FEV workflow.',
-              status: 'curating'
+                'Full-robot parametric model built under our CAD-first and FEV workflow.',
+              status: 'active',
+              url: 'https://cad.onshape.com/documents/9996eb6f6e3343715753fcfa'
             },
             {
               type: 'github',
-              title: 'Automated Shot Angle, Velocity & Auto-Aim Logic',
+              title: 'Aztecbot 22571 Premier Event Robot Codebase',
               description:
-                'Control logic developed for the Mexico Premier Event robot.',
-              status: 'curating'
+                'Robot code from the Mexico Premier Event, including the automated shot angle and velocity correction and basket auto-aim logic.',
+              status: 'active',
+              url: 'https://github.com/manu2w2/Aztecbot-22571'
             },
             {
               type: 'photo',
@@ -214,17 +221,27 @@ export const contentEn: SiteContent = {
           evidence: [
             {
               type: 'github',
-              title: 'Velocity Bucks Robot Control Codebase',
+              title: 'Velocity Bucks Robot Control Codebase (BIOBUZZ season)',
               description:
                 'Modular subsystem and command-based FTC software architecture.',
-              status: 'curating'
+              status: 'active',
+              url: 'https://github.com/manu2w2/BIOBUZZ_velocity_bucks'
             },
             {
-              type: 'website',
-              title: 'Velocity Bucks Official Team Website',
+              type: 'onshape',
+              title: 'Velocity Bucks Robot CAD (BIOBUZZ season, Onshape)',
               description:
-                'Public outreach and team documentation site.',
-              status: 'curating'
+                'Full-robot parametric model for the BIOBUZZ season, designed CAD-first.',
+              status: 'active',
+              url: 'https://cad.onshape.com/documents/69a50231a2f32c50d2c20f8f/w/252a05a2cc4d919d4cb5bba9/e/061ff5da347421369982ad5b'
+            },
+            {
+              type: 'github',
+              title: 'Velocity Bucks Team Website Codebase',
+              description:
+                'Source code of the team website, which I develop and maintain.',
+              status: 'active',
+              url: 'https://github.com/manu2w2/VelocityBucks'
             }
           ]
         }

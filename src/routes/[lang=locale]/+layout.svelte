@@ -31,7 +31,7 @@
   let canonicalUrl = $derived(data.locale === 'es' ? esUrl : enUrl);
   let ogLocale = $derived(data.locale === 'es' ? 'es_MX' : 'en_US');
   let ogLocaleAlternate = $derived(data.locale === 'es' ? 'en_US' : 'es_MX');
-  let ogImage = $derived(`${SITE_CONFIG.domain}${SITE_CONFIG.heroImage.src}`);
+  let ogImage = $derived(`${SITE_CONFIG.domain}${SITE_CONFIG.ogImage.src}`);
 </script>
 
 <svelte:head>
@@ -46,6 +46,8 @@
   <meta property="og:locale" content={ogLocale} />
   <meta property="og:locale:alternate" content={ogLocaleAlternate} />
   <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content={String(SITE_CONFIG.ogImage.width)} />
+  <meta property="og:image:height" content={String(SITE_CONFIG.ogImage.height)} />
   <meta property="og:image:alt" content={data.content.hero.imageAlt} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content={ogImage} />

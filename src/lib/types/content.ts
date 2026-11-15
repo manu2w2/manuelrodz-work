@@ -112,6 +112,11 @@ export interface SiteContent {
       sectionExecution: string;
       sectionOutcomes: string;
       sectionEvidence: string;
+  glanceHeading: string;
+  glanceRole: string;
+  glancePeriod: string;
+  glanceOutcome: string;
+  glanceFocus: string;
       attributionHeading: string;
       curatingNote: string;
       externalLinkHint: string;
