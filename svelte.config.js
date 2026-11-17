@@ -5,6 +5,10 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
   preprocess: vitePreprocess(),
   kit: {
+    csp: {
+      mode: 'auto',
+      directives: { 'script-src': ['self'] }
+    },
     adapter: adapter({
       pages: 'build',
       assets: 'build',
@@ -25,6 +29,8 @@ const config = {
         '/sitemap.xml',
         '/es',
         '/en',
+        '/es/proyectos',
+        '/en/projects',
         '/es/cv',
         '/en/cv',
         '/es/privacidad',

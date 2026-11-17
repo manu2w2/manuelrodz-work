@@ -33,7 +33,7 @@
       <a href={cvFile.href} download={cvFile.filename} class="btn-primary">
         <Icon name="download" size={17} />
         <span>{cv.downloadPdfLabel}</span>
-        <span class="tabular meta-badge">({data.locale === 'es' ? 'PDF · aprox. 120 KB' : 'PDF · approx. 120 KB'})</span>
+        <span class="tabular meta-badge">(PDF)</span>
       </a>
       <button type="button" class="btn-secondary" onclick={printPage}>
         <Icon name="print" size={17} />

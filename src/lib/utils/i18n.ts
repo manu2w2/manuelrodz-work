@@ -4,6 +4,10 @@ export function getProjectPath(locale: Locale, slug: ProjectSlug): string {
   return locale === 'es' ? `/es/proyectos/${slug}` : `/en/projects/${slug}`;
 }
 
+export function getProjectsPath(locale: Locale): string {
+  return locale === 'es' ? '/es/proyectos' : '/en/projects';
+}
+
 export function getPrivacyPath(locale: Locale): string {
   return locale === 'es' ? '/es/privacidad' : '/en/privacy';
 }
@@ -22,6 +26,10 @@ export function getHomePath(locale: Locale): string {
  */
 export function getAlternateLocalePath(pathname: string, targetLocale: Locale): string {
   const clean = pathname.replace(/\/+$/, '') || '/';
+
+  if (clean === '/es/proyectos' || clean === '/en/projects') {
+    return getProjectsPath(targetLocale);
+  }
 
   const projectMatch = clean.match(/^\/(es|en)\/(proyectos|projects)\/([^/]+)$/);
   if (projectMatch) {

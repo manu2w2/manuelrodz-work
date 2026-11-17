@@ -21,7 +21,7 @@ export const contentEs: SiteContent = {
     academicStatus: "DISEÑO MECÁNICO · SISTEMAS EMBEBIDOS · DESARROLLO WEB",
     fullName: "Manuel Enrique Rodríguez Nicolás",
     coreStatement:
-      "Diseño mecanismos en Onshape, programo sistemas de control en C++/Java para robótica competitiva y desarrollo plataformas web con SvelteKit. Combino rigor técnico y logística para llevar proyectos desde el prototipo hasta la ejecución.",
+      "Diseño mecanismos en Onshape y programo robots de competencia en C++ y Java. También desarrollo plataformas web para equipos. Combino diseño, programación y trabajo en equipo para llevar proyectos del prototipo a la competencia.",
     primaryCta: "Descargar CV (PDF · ES)",
     secondaryCta: "Explorar trayectoria y proyectos",
     location: "Mérida, Yucatán, México",
@@ -35,13 +35,13 @@ export const contentEs: SiteContent = {
     quickFactsLabel: 'Datos rápidos',
     stats: [
       { value: '10+', label: 'Competencias de robótica' },
-      { value: '4', label: 'Premios nacionales' },
+      { value: '4', label: 'Reconocimientos FTC' },
       { value: '1', label: 'Premio internacional' },
-      { value: '60+', label: 'Delegaciones MUN coord.' }
+      { value: '80+', label: 'Personas impactadas' }
     ],
     quickFacts: [
       { icon: 'academic', text: 'Bachillerato · Gen. 2024–2027' },
-      { icon: 'globe', text: 'Español (Nativo) · Inglés (Profesional)' },
+      { icon: 'globe', text: 'Español (nativo) · Inglés B2 (intermedio alto)' },
       { icon: 'cog', text: 'Robótica · CAD · Desarrollo web · Liderazgo' }
     ]
   },
@@ -49,10 +49,10 @@ export const contentEs: SiteContent = {
     eyebrow: '01 / Metodología',
     heading: 'Cómo pienso y construyo',
     intro:
-      'Más allá de las herramientas técnicas, mi trabajo responde a una misma forma de abordar problemas complejos en ingeniería y organización de equipos.',
+      'Combino análisis, criterio técnico y trabajo en equipo para resolver retos de ingeniería.',
     philosophyTitle: 'Aprender para compartir',
     philosophyBody:
-      'Mi principal motor es entender cómo funcionan las cosas y experimentar con lo que tengo a mi alcance. Pero considero que el aprendizaje solo se completa cuando se comparte con claridad para impulsar a otras personas, ya sea mentoreando nuevas generaciones en robótica o preparando asesorías visuales gratuitas para mis compañeros.',
+      'Me mueve entender cómo funcionan las cosas y probar ideas con los recursos disponibles. Compartir lo que aprendo también es parte del proceso: acompaño a nuevos integrantes de robótica y preparo asesorías gratuitas para mis compañeros.',
     stepsTitle: 'Proceso de resolución de problemas',
     steps: [
       {
@@ -66,14 +66,14 @@ export const contentEs: SiteContent = {
           'Identifico distintas rutas técnicas o logísticas en lugar de comprometerme con la primera idea disponible.'
       },
       {
-        name: 'Selección por viabilidad y resonancia',
+        name: 'Elegir con criterio',
         detail:
-          'Evalúo qué solución es factible dentro del plazo y los recursos reales, y cuál tiene sentido construir con mi equipo.'
+          'Comparo la viabilidad, el plazo, los recursos y las capacidades del equipo antes de decidir.'
       },
       {
-        name: 'Validación y ejecución iterativa',
+        name: 'Validación iterativa',
         detail:
-          'Documento, pruebo digitalmente antes de manufacturar y optimizo cada ciclo a partir de evidencia.'
+          'Pruebo en CAD antes de fabricar y ajusto cada ciclo según los resultados.'
       }
     ],
     fevTitle: 'Metodología de ingeniería FEV',
@@ -96,9 +96,9 @@ export const contentEs: SiteContent = {
   },
   projectsSection: {
     eyebrow: '02 / Trayectoria',
-    heading: 'Hitos y proyectos ancla',
+    heading: 'Hitos y proyectos',
     intro:
-      'Cuatro experiencias que resumen mi evolución durante la preparatoria: desde mi primer prototipo en secundaria hasta el liderazgo técnico internacional, la cofundación de un equipo independiente y la organización horizontal de un modelo de Naciones Unidas.',
+      'Cuatro proyectos muestran mi evolución: desde mi primer robot en secundaria hasta el liderazgo técnico, la cofundación de un equipo FTC y la organización de ValladolidMUN.',
     readCaseLabel: 'Leer caso de estudio completo',
     caseLabels: {
       backToHome: 'Volver al dossier principal',
@@ -132,29 +132,30 @@ export const contentEs: SiteContent = {
         contextNote: 'Temporadas Into the Deep (2024–2025) y Decode (2025–2026)',
         tags: ['Robótica FTC', 'Flujo CAD', 'Drive Coach'],
         executiveSummary:
-          'Comencé en primer año sin experiencia previa en FTC y evolucioné hasta asumir la capitanía de diseño y la dirección estratégica en cancha. Impulsé la transición a ingeniería 100% CAD-first bajo la metodología FEV, llevando al equipo a clasificar al Campeonato Nacional en ambas temporadas y a ganar el Design Award 1st Place en el evento internacional Mexico Premier Event.',
+          'Entré a FTC sin experiencia y crecí de constructor a Capitán de Diseño y Drive Coach. En Decode impulsé con el equipo el flujo CAD-first bajo la metodología FEV y programé la corrección de tiro y el autoapuntado. Mi contribución fue clave para los resultados y reconocimientos colectivos de Aztecbot.',
         keyOutcome:
           'Inspire Award 1st Place y Top 10 Nacional (Into the Deep) · Winning Alliance Captain Regional y Design Award 1st Place en Mexico Premier Event (Decode).',
         caseStudy: {
+          openingSummary: 'Me uní a Aztecbot sin experiencia en FTC. Con el tiempo pasé de ayudar a construir el robot a liderar su diseño y asumir como Drive Coach. En Decode también programé la corrección de tiro y el autoapuntado que usamos en el Mexico Premier Event.',
           attributionStatement:
-            'Los logros en competencia son resultado del trabajo colectivo de todo el equipo Aztecbot. Mi contribución directa se centró en la integración física inicial (temporada Into the Deep) y, durante la temporada Decode, en la capitanía de diseño CAD en Onshape junto con un compañero, la fabricación en impresión 3D y corte láser, el rol de Drive Coach y el desarrollo de la lógica de auto-apuntado y corrección de tiro para el Mexico Premier Event.',
+            'Los premios los ganó el equipo Aztecbot. En Into the Deep participé en la integración del robot. En Decode, como Capitán de Diseño, trabajé con un compañero en el CAD y la fabricación; también fui Drive Coach y programé la corrección de tiro y el autoapuntado. Mi aporte fue clave para los resultados que logramos como equipo.',
           contextAndConstraints: [
-            'Al ingresar en primer año de preparatoria durante la temporada Into the Deep (2024–2025), partí desde cero dentro de un equipo de escuela pública relativamente joven y sin historial previo en torneos regionales.',
-            'Para la segunda temporada (Decode, 2025–2026), el reto consistió en elevar la precisión mecánica y la repetibilidad del robot sin contar con recursos ilimitados, y posteriormente diseñar un robot completamente nuevo en pocas semanas tras recibir la invitación al Mexico Premier Event.'
+            'Me uní a Aztecbot en primer año de preparatoria, durante Into the Deep (2024–2025), sin haber participado antes en FTC. Nuestro equipo de una preparatoria pública todavía no tenía experiencia en torneos nacionales.',
+            'Al año siguiente, en Decode (2025–2026), queríamos mejorar la precisión y consistencia del robot con los recursos disponibles. Cuando nos invitaron al Mexico Premier Event, tuvimos pocas semanas para diseñar uno nuevo.'
           ],
           analysisAndDecisions: [
-            'En la temporada Decode detectamos que construir directamente en físico generaba retrabajos costosos. Junto con un compañero decidimos migrar a un flujo 100% CAD-first en Onshape: modelar y verificar cada ensamble antes de cortar o imprimir una sola pieza.',
-            'Estructuramos las decisiones técnicas bajo tres valores: Fiabilidad, Eficiencia y Viabilidad (metodología FEV), optimizando componentes para impresión 3D y corte láser.',
-            'De cara al Mexico Premier Event, analicé los errores humanos habituales en lanzamientos bajo presión y opté por programar una lógica de corrección automática de ángulo y velocidad de tiro, además de auto-apuntado a la canasta.'
+            'En Decode nos dimos cuenta de que construir directamente en físico nos hacía repetir trabajo. Con un compañero propuse usar Onshape para revisar los ensambles antes de fabricar; el equipo adoptó ese flujo CAD-first.',
+            'Para decidir cómo diseñar cada subsistema usamos FEV: Fiabilidad, Eficiencia y Viabilidad. También pensamos desde el inicio en las piezas que podíamos fabricar con impresión 3D y corte láser.',
+            'Para el Mexico Premier Event programé un sistema que ajustaba el ángulo y la velocidad del tiro y orientaba el robot hacia la canasta, reduciendo los cálculos que los drivers debían hacer durante el partido.'
           ],
           executionAndTeamwork: [
-            'Durante Into the Deep me integré progresivamente en la ideación y armado mecánico junto a mis compañeros, descubriendo que la constancia diaria transforma ideas iniciales en sistemas competitivos.',
-            'Como Capitán de Diseño en Decode coordiné la revisión digital previa al ensamblaje físico. Además, asumí el rol de Drive Coach en el Campeonato Nacional y en el Mexico Premier Event, supervisando el entrenamiento de los drivers, el dominio del reglamento y el soporte táctico durante cada partida.'
+            'En Into the Deep me involucré en pensar y armar el robot con mis compañeros, mientras aprendía cómo funcionaba la competencia.',
+            'En Decode coordiné la revisión de los ensambles en CAD antes de fabricarlos. Como Drive Coach, ayudé a preparar a los drivers, repasar el reglamento y decidir la estrategia durante los partidos del Nacional y el Mexico Premier Event.'
           ],
           outcomesAndLessons: [
-            'Temporada Into the Deep (2024–2025): Finalistas en el Torneo Regional y ganadores del Inspire Award 1st Place; clasificación al Campeonato Nacional de FTC en México, avanzando a playoffs y ubicándonos en el Top 10 nacional.',
-            'Temporada Decode (2025–2026): Campeones regionales como Winning Alliance Captain con pase al Campeonato Nacional, e invitación al Mexico Premier Event, donde obtuvimos el Design Award 1st Place en reconocimiento al diseño y la metodología FEV.',
-            'Aprendizaje central: las grandes metas nacen de pequeños esfuerzos sostenidos, y la disciplina de validar antes de construir multiplica la capacidad de cualquier equipo.'
+            'En Into the Deep (2024–2025) llegamos a la final regional y ganamos el Inspire Award 1st Place. Después clasificamos al Campeonato Nacional, donde avanzamos a playoffs y terminamos en el Top 10.',
+            'En Decode (2025–2026) fui capitán de la alianza ganadora del torneo regional y Aztecbot obtuvo el pase al Nacional. Más tarde nos invitaron al Mexico Premier Event, donde el equipo ganó el Design Award 1st Place.',
+            'Aprendí que revisar y probar el diseño antes de fabricar ahorra tiempo y nos ayuda a aprovechar mejor los recursos del equipo.'
           ],
           evidence: [
             {
@@ -193,27 +194,28 @@ export const contentEs: SiteContent = {
         contextNote: 'Construcción organizativa y técnica desde cero',
         tags: ['Cofundación', 'Arquitectura Java', 'Web'],
         executiveSummary:
-          'Cofundé un equipo de robótica FTC completamente independiente de una institución académica. Asumo la programación principal tanto del robot de competencia como de la plataforma web del equipo, además de acompañar el diseño y armado físico transfiriendo la experiencia acumulada en temporadas anteriores.',
+          'Cofundé un equipo FTC independiente y desarrollo el software del robot y el sitio web del equipo. También apoyo el diseño y el armado, y comparto con mis compañeros lo aprendido en temporadas anteriores.',
         keyOutcome:
           'Creación y puesta en marcha de un equipo autónomo con arquitectura de software modular y transferencia activa de conocimiento.',
         caseStudy: {
+          openingSummary: 'Fundé Velocity Bucks con mis compañeros como equipo independiente de FTC. Me encargo de programar el robot y desarrollar el sitio del equipo; también participo en el trabajo del taller y comparto lo que he aprendido.',
           attributionStatement:
-            'Proyecto cofundado en equipo. Mis responsabilidades directas abarcan la cofundación organizativa, la arquitectura y programación del robot de competencia, el desarrollo de la página web del equipo y la mentoría técnica en diseño y ensamblaje.',
+            'El equipo lo fundamos entre varios. Yo me encargo de organizar el trabajo junto con mis compañeros, definir la arquitectura y programar el robot, desarrollar el sitio web y apoyar a otros integrantes con CAD y ensamblaje.',
           contextAndConstraints: [
-            'A diferencia de un equipo respaldado por una preparatoria, operar de manera independiente exige gestionar recursos externos, espacios de trabajo y procesos internos desde cero.',
-            'El equipo integra compañeros con distintos niveles de experiencia previa, por lo que resultaba indispensable establecer estándares claros de ingeniería y colaboración desde el inicio.'
+            'Al no depender de una preparatoria, tenemos que conseguir nuestros propios recursos y espacio de trabajo, además de decidir cómo organizarnos.',
+            'El equipo reúne integrantes con distintos niveles de experiencia. Por eso estamos acordando una forma de trabajar y estándares técnicos que todos podamos seguir.'
           ],
           analysisAndDecisions: [
-            'Analizamos cómo adaptar las buenas prácticas de temporadas anteriores (diseño previo, modularidad en código y división clara de tareas) a un entorno con recursos acotados.',
-            'En software opté por una arquitectura modular basada en subsistemas y comandos para facilitar las pruebas independientes y la lectura del código por otros integrantes.'
+            'Queríamos aprovechar lo aprendido en temporadas anteriores, pero adaptarlo al presupuesto y al tiempo de un equipo independiente. Por eso priorizamos revisar los diseños antes de fabricar y repartir con claridad las tareas.',
+            'Organicé el código en subsistemas y comandos. Así podemos probar cada mecanismo por separado y mis compañeros pueden entender y mantener el programa con más facilidad.'
           ],
           executionAndTeamwork: [
-            'Desarrollo el software de control del robot y la presencia web del equipo, mientras apoyo presencialmente en el taller durante el diseño y armado mecánico.',
-            'Comparto con mis compañeros los aprendizajes de diseño CAD, tolerancias de manufactura y estrategia de competencia adquiridos previamente.'
+            'Además de programar el robot y desarrollar el sitio web, trabajo con mis compañeros en el diseño y el armado mecánico.',
+            'En el taller comparto lo que he aprendido sobre CAD, tolerancias de fabricación y estrategia de competencia.'
           ],
           outcomesAndLessons: [
-            'Consolidación de una estructura funcional de trabajo autónomo donde el conocimiento técnico se documenta y se transmite entre pares.',
-            'Aprendizaje central: liderar en un proyecto independiente significa construir tanto la infraestructura técnica como la cultura de aprendizaje del equipo.'
+            'Ya pusimos en marcha un equipo independiente, con una base de software modular y una dinámica para compartir conocimientos entre compañeros.',
+            'Aprendí que fundar un equipo no es solo construir el robot: también hay que crear la manera de trabajar y aprender juntos.'
           ],
           evidence: [
             {
@@ -253,26 +255,28 @@ export const contentEs: SiteContent = {
         contextNote: 'Más de 60 delegaciones participantes en 6 comités',
         tags: ['Modelo ONU', 'Liderazgo Horizontal', '60+ Delegaciones'],
         executiveSummary:
-          'Como representante de la Comisión de Valladolid dentro de SMMUN 2027 "Our Spark", asumí responsabilidades equivalentes a la Secretaría General en la creación, logística, vinculación y ejecución de ValladolidMUN. Trabajamos como un equipo horizontal de iguales junto a las consultorías de logística, finanzas y vinculación, logrando reunir a más de 60 delegaciones en 6 comités.',
+          'Como representante de la Comisión de Valladolid en SMMUN 2027, participé en la planeación, logística, vinculación y ejecución de ValladolidMUN. Trabajé con el equipo organizador y las consultorías de logística, finanzas y vinculación bajo un modelo horizontal.',
         keyOutcome:
           'Ejecución exitosa de un modelo con más de 60 delegaciones y 6 comités mediante gobernanza horizontal entre iguales.',
         caseStudy: {
+          openingSummary: 'Como representante de la Comisión de Valladolid, ayudé a coordinar la organización de ValladolidMUN. Mi papel incluía responsabilidades similares a las de Secretaría General y lo desempeñé junto con las consultorías y el resto del equipo.',
+          caseOutcome: 'Organizamos un modelo con más de 60 delegaciones en seis comités, trabajando de forma coordinada entre la Comisión y las consultorías.',
           attributionStatement:
-            'ValladolidMUN fue posible gracias al esfuerzo conjunto de todo el equipo organizador. Como representante de la Comisión de Valladolid asumí funciones de articulación general equivalentes a Secretaría General, trabajando a la par y en igualdad de condiciones con las consultorías de Logística, Finanzas y Vinculación, quienes actuaron como apoyo y guía fundamental en cada etapa.',
+            'ValladolidMUN lo organizamos entre varias personas. Desde la Comisión de Valladolid me encargué de coordinar aspectos generales y trabajé al mismo nivel que las consultorías de Logística, Finanzas y Vinculación. Mis funciones se parecían a las de Secretaría General, pero el trabajo y las decisiones fueron compartidos.',
           contextAndConstraints: [
-            'Construir y operar un Modelo de Naciones Unidas con múltiples comités exige coordinar sedes, tiempos, finanzas, difusión y protocolos académicos sin margen de improvisación durante los días del evento.',
-            'El éxito dependía de mantener una comunicación fluida y corresponsable entre áreas especializadas.'
+            'Para sacar adelante un Modelo de Naciones Unidas con varios comités tuvimos que coordinar la sede, la agenda, el presupuesto, la vinculación institucional y los protocolos académicos.',
+            'Cada área dependía de las demás. Mantenernos comunicados y responder a tiempo a los cambios era clave durante los debates.'
           ],
           analysisAndDecisions: [
-            'Adoptamos un esquema de trabajo horizontal entre iguales: en lugar de una estructura vertical rígida, cada consultoría (logística, finanzas y vinculación) aportó criterio especializado y guía mutua para resolver cuellos de botella antes y durante el modelo.'
+            'En vez de concentrar las decisiones en una sola persona, organizamos el trabajo de forma horizontal. Las consultorías de logística, finanzas y vinculación aportaron su experiencia para anticipar problemas y resolverlos entre todos.'
           ],
           executionAndTeamwork: [
-            'Participé en la planeación integral, vinculación institucional y resolución en tiempo real de imprevistos operativos durante la ejecución de los debates.',
-            'La coordinación estrecha entre la Comisión de Valladolid y las consultorías permitió sostener el ritmo de 6 comités simultáneos.'
+            'Coordiné parte de la planeación general y la vinculación institucional, y ayudé a resolver imprevistos durante las sesiones.',
+            'El trabajo cercano entre la Comisión de Valladolid y las consultorías permitió mantener activos los seis comités al mismo tiempo.'
           ],
           outcomesAndLessons: [
-            'Participación de más de 60 delegaciones distribuidas en 6 comités activos de debate y redacción de resoluciones.',
-            'Aprendizaje central: el liderazgo más efectivo en proyectos humanos complejos ocurre cuando se reconoce la experiencia de cada integrante y se construye entre iguales.',
+            'Más de 60 delegaciones participaron en los seis comités de debate y redacción de resoluciones.',
+            'Aprendí que coordinar un proyecto así significa escuchar a cada área, confiar en su experiencia y llegar a acuerdos en conjunto.',
           ],
           evidence: [
             {
@@ -295,24 +299,25 @@ export const contentEs: SiteContent = {
         contextNote: '3.er lugar en categoría de robótica',
         tags: ['Origen Vocacional', 'Mecanismo Recolector', '3.er Lugar'],
         executiveSummary:
-          'Mi primer acercamiento formal a la robótica de competencia: junto con un amigo diseñé, armé y programé un robot recolector capaz de recoger y depositar bolas de papel y tapas en un contenedor. Obtener el tercer lugar confirmó que podía transformar una idea en una máquina funcional.',
+          'Junto con un amigo diseñé, armé y programé mi primer robot de competencia: un recolector de bolas de papel y tapas. Obtuvimos el tercer lugar en robótica de Yucatán i6.',
         keyOutcome:
-          '3.er lugar en robótica y detonante de mi vocación por la ingeniería y la programación.',
+          'Ese primer proyecto despertó mi interés por la ingeniería y la programación.',
         caseStudy: {
+          openingSummary: 'En tercero de secundaria, mi amigo y yo construimos un robot recolector de bolas de papel y tapas para competir en robótica en Yucatán i6. Programamos sus movimientos y obtuvimos el tercer lugar.',
           attributionStatement:
-            'Desarrollado en equipo de dos personas junto a un compañero de secundaria, compartiendo el armado físico, las pruebas de recolección y la programación básica.',
+            'Mi compañero y yo compartimos todo el proyecto: diseñamos y armamos el robot, lo probamos y programamos sus movimientos.',
           contextAndConstraints: [
-            'Primera experiencia construyendo y programando un robot bajo reglas de competencia, partiendo únicamente de curiosidad y experimentación.'
+            'Era la primera vez que diseñábamos y programábamos un robot para competir. Empezamos con curiosidad y fuimos aprendiendo mientras probábamos ideas.'
           ],
           analysisAndDecisions: [
-            'Definimos un mecanismo recolector sencillo y directo para manipular objetos ligeros (bolas de papel y tapas) y depositarlos con precisión dentro del contenedor objetivo.'
+            'Necesitábamos recoger objetos ligeros —bolas de papel y tapas— y llevarlos a un contenedor. Por eso optamos por un mecanismo recolector sencillo.'
           ],
           executionAndTeamwork: [
-            'Iteramos sobre el ensamblaje físico y los tiempos de movimiento hasta comprobar en pruebas reales que el ciclo completo de recolección funcionaba de manera confiable.'
+            'Probamos el robot varias veces y fuimos ajustando el armado y sus movimientos hasta que pudo recoger los objetos y dejarlos en el contenedor.'
           ],
           outcomesAndLessons: [
-            '3.er lugar en la categoría de robótica de Yucatán i6.',
-            'Aprendizaje central: comprobar que una idea propia funciona en el mundo físico fue el punto de inflexión que originó toda mi trayectoria posterior en ingeniería.'
+            'Obtuvimos el 3.er lugar en la competencia de robótica Yucatán i6 con nuestro robot recolector.',
+            'Ver que algo que habíamos imaginado y construido funcionaba en una competencia despertó mi interés por la ingeniería y la programación.'
           ],
           evidence: [
             {
@@ -327,36 +332,74 @@ export const contentEs: SiteContent = {
       }
     ]
   },
-  complementary: {
-    eyebrow: '03 / Dimensiones',
-    heading: 'Dimensiones complementarias',
+  projectsIndex: {
+    eyebrow: 'Trayectoria',
+    heading: 'Proyectos',
     intro:
-      'La ingeniería cobra sentido cuando dialoga con la comunidad, la enseñanza y la expresión creativa. Estas actividades forman parte integral de quién soy fuera del taller de competencia.',
+      'Estos proyectos reúnen mi experiencia en robótica, programación y organización de equipos: desde mi primer robot hasta competencias FTC y la coordinación de ValladolidMUN.'
+  },
+  recognitionsSection: {
+    eyebrow: '03 / Competencias',
+    heading: 'Otros resultados destacados',
+    intro:
+      'Además de FTC, he participado en competencias de robótica, ciencia y tecnología. Estos resultados incluyen logros individuales y de equipo.',
     items: [
       {
-        title: 'Asesorías académicas gratuitas y material visual',
-        role: 'Mentor entre pares',
-        summary:
-          'Brindo asesorías gratuitas a compañeros y conocidos en temas académicos y técnicos, elaborando presentaciones visuales y ejercicios prácticos adaptados a su forma de aprender.'
+        result: '1.er lugar · Robot Fútbol',
+        event: 'Competencia nacional organizada por SECIHTI',
+        detail: 'Participaron equipos de distintos estados del país.'
       },
       {
-        title: 'SMMUN 2027 y Crecer Sin Barreras',
-        role: 'Secretario de Tecnología, Logística y Eventos · Secretario de Vinculación y Finanzas',
+        result: '2.º lugar · Categoría Robótica',
+        event: 'LIT Anáhuac Junior'
+      },
+      {
+        result: '6.º lugar estatal',
+        event: 'Olimpiada Estatal de Biología'
+      },
+      {
+        result: '2.º lugar estatal · Nominación global',
+        event: 'NASA Space Apps Challenge 2024',
+        detail: 'Resultado obtenido junto con mi equipo.'
+      }
+    ]
+  },
+  complementary: {
+    eyebrow: '04 / Otras experiencias',
+    heading: 'Más allá de la ingeniería',
+    intro:
+      'Fuera de mis proyectos técnicos, también doy asesorías, colaboro con una organización comunitaria y hago música.',
+    items: [
+      {
+        title: 'Asesorías académicas entre pares',
+        role: 'Tutor voluntario',
         summary:
-          'Participo en la infraestructura tecnológica y logística de SMMUN 2027 "Our Spark" y colaboro en vinculación y finanzas dentro de la organización social Crecer Sin Barreras.'
+          'Doy asesorías gratuitas en materias académicas y técnicas. Preparo materiales visuales y ejercicios según lo que necesita cada estudiante.'
+      },
+      {
+        title: 'SMMUN 2027',
+        role: 'Secretario de Tecnología, Logística y Eventos',
+        summary:
+          'Coordino la tecnología, la logística y los eventos de SMMUN 2027 "Our Spark" junto con el equipo organizador.'
+      },
+      {
+        title: 'Crecer Sin Barreras',
+        role: 'Secretario de Vinculación y Finanzas',
+        summary:
+          'Apoyo la gestión financiera y el contacto con aliados para impulsar las iniciativas comunitarias de la organización.'
       },
       {
         title: 'Broken Sticks',
-        role: 'Integrante y compositor',
+        role: 'Cofundador y músico',
         summary:
-          'Formo parte de la banda estudiantil Broken Sticks, escribiendo canciones originales y participando en presentaciones locales como espacio de creatividad y trabajo colectivo.'
+          'Con la banda escribí, compuse y publiqué tres canciones originales. También obtuvimos el primer lugar en el festival de talentos de la escuela.'
       }
     ]
   },
   contact: {
     heading: 'Contacto y verificación',
     intro:
-      'Si formas parte de un comité de becas, admisiones universitarias o buscas conversar sobre algún proyecto documentado en este sitio, puedes escribirme directamente.',
+      '¿Formas parte de un comité de becas o admisiones, o quieres conversar sobre alguno de mis proyectos? Escríbeme directamente.',
     emailLabel: 'Correo electrónico directo',
     copyButton: 'Copiar correo',
     copiedAnnouncement: 'Correo electrónico copiado al portapapeles.',
@@ -397,30 +440,63 @@ export const contentEs: SiteContent = {
           },
           {
             organization: 'ValladolidMUN / SMMUN 2027 "Our Spark"',
-            role: 'Representante de la Comisión de Valladolid · Secretario de Tecnología, Logística y Eventos',
-            period: '2026 – 2027',
+            role: 'Secretario de Tecnología, Logística y Eventos · Oficial de Conferencias · Delegado',
+            period: '2024 – 2027',
             highlights: [
-              'Articulación general (funciones equivalentes a Secretaría General) en equipo horizontal de iguales junto a las consultorías de logística, finanzas y vinculación.',
-              'Operación de un modelo con más de 60 delegaciones participantes en 6 comités.'
+              'Coordino tecnología, logística y eventos de SMMUN 2027 "Our Spark" en colaboración con las demás áreas organizadoras.',
+              'Apoyé la organización de un modelo con más de 60 delegaciones en 6 comités y participé como delegado en cinco ocasiones.',
+              'Fui oficial de conferencias y miembro de mesa directiva; mi comité recibió el reconocimiento a Mejor Comité en Jenaro MUN.'
             ]
           },
           {
             organization: 'Aztecbot (Equipo FIRST Tech Challenge — Preparatoria)',
-            role: 'Capitán de Diseño, Drive Coach y Constructor',
+            role: 'Capitán de Diseño y Drive Coach (2026) · Mecánico principal y miembro del equipo (2025)',
             period: '2024 – 2026',
             highlights: [
-              'Implementación de flujo de diseño 100% CAD-first en Onshape bajo la metodología FEV (Fiabilidad, Eficiencia y Viabilidad).',
-              'Desarrollo de lógica de corrección automática de ángulo y velocidad de tiro y auto-apuntado para el Mexico Premier Event.',
-              'Conducción estratégica en cancha como Drive Coach en Campeonato Nacional y evento internacional.'
+              'Lideré el diseño CAD en Onshape y el desarrollo mecánico del robot Decode bajo la metodología FEV (Fiabilidad, Eficiencia y Viabilidad).',
+              'Programé la corrección automática del ángulo y la velocidad de tiro y el autoapuntado para el Mexico Premier Event.',
+              'Como Drive Coach, guié la estrategia del equipo en el Campeonato Nacional y en el Mexico Premier Event; mi trabajo fue clave para los resultados que obtuvimos como equipo.',
+              'En 2025, fui responsable del ensamblaje, mantenimiento y optimización mecánica del robot Into the Deep.'
             ]
           },
           {
-            organization: 'Crecer Sin Barreras (ONG) y Mentoría Académica entre Pares',
-            role: 'Secretario de Vinculación y Finanzas · Tutor voluntario',
+            organization: 'Competencias de robótica',
+            role: 'Participante',
+            period: '2024 – 2026',
+            highlights: [
+              'Participé en más de 10 competencias de robótica entre 2024 y 2026.'
+            ]
+          },
+          {
+            organization: 'Crecer Sin Barreras (ONG)',
+            role: 'Secretario de Vinculación y Finanzas',
             period: '2025 – Actualidad',
             highlights: [
-              'Apoyo en gestión de vinculación y finanzas para iniciativas comunitarias.',
-              'Asesorías académicas gratuitas con presentaciones visuales y ejercicios prácticos.'
+              'Apoyo en la gestión de vinculación y finanzas para iniciativas comunitarias.'
+            ]
+          },
+          {
+            organization: 'Mentoría Académica entre Pares',
+            role: 'Tutor voluntario',
+            period: '2025 – Actualidad',
+            highlights: [
+              'Doy asesorías académicas gratuitas con presentaciones visuales y ejercicios prácticos.'
+            ]
+          },
+          {
+            organization: 'Un Nuevo Bosque',
+            role: 'Voluntario',
+            period: '2023 – 2024',
+            highlights: [
+              'Participé en campañas de reforestación y actividades de educación ambiental.'
+            ]
+          },
+          {
+            organization: 'Broken Sticks',
+            role: 'Cofundador y músico',
+            period: 'Proyecto escolar',
+            highlights: [
+              'Escribí, compuse y publiqué tres canciones originales; el proyecto obtuvo el primer lugar en el festival de talentos de la escuela.'
             ]
           }
         ]
@@ -429,8 +505,23 @@ export const contentEs: SiteContent = {
         heading: 'Reconocimientos y resultados destacados',
         items: [
           {
+            award: '1.er lugar en Robot Futbol',
+            event: 'Competencia nacional organizada por SECIHTI Yucatán',
+            year: '2026'
+          },
+          {
             award: 'Design Award 1st Place',
             event: 'Mexico Premier Event (FTC — Temporada Decode)',
+            year: '2026'
+          },
+          {
+            award: '15.º lugar nacional',
+            event: 'FIRST Tech Challenge México (Temporada Decode)',
+            year: '2026'
+          },
+          {
+            award: '2.º lugar en robótica',
+            event: 'LIT Anáhuac Junior',
             year: '2026'
           },
           {
@@ -439,13 +530,28 @@ export const contentEs: SiteContent = {
             year: '2026'
           },
           {
-            award: 'Inspire Award 1st Place, Finalista Regional y Top 10 Nacional (Playoffs)',
-            event: 'Torneo Regional y Campeonato Nacional FTC México (Temporada Into the Deep)',
+            award: 'Inspire Award 1st Place, finalista de la alianza y 9.º lugar nacional',
+            event: 'FTC México (Temporada Into the Deep)',
             year: '2025'
           },
           {
-            award: '3.er Lugar en Robótica',
-            event: 'Competencia Yucatán i6',
+            award: '1.er lugar en la categoría Brazo',
+            event: 'Tec Conkal',
+            year: '2025'
+          },
+          {
+            award: '2.º lugar estatal y nominación global del equipo',
+            event: 'NASA Space Apps Challenge',
+            year: '2024'
+          },
+          {
+            award: '6.º lugar',
+            event: 'Olimpiada Estatal de Biología',
+            year: '2024'
+          },
+          {
+            award: '3.er lugar con un robot recolector',
+            event: 'Competencia de Robótica Yucatán i6',
             year: 'Secundaria'
           }
         ]
@@ -467,7 +573,7 @@ export const contentEs: SiteContent = {
           },
           {
             area: 'Liderazgo y gestión',
-            items: 'Trabajo horizontal entre iguales, logística de eventos académicos, mentoría y comunicación técnica.'
+            items: 'Trabajo horizontal entre iguales, logística de eventos académicos, mentoría, comunicación técnica y coordinación de equipos.'
           }
         ]
       },
@@ -475,7 +581,7 @@ export const contentEs: SiteContent = {
         heading: 'Idiomas',
         items: [
           { language: 'Español', proficiency: 'Lengua materna' },
-          { language: 'Inglés', proficiency: 'Competencia profesional y técnica para entornos académicos' }
+          { language: 'Inglés', proficiency: 'B2 · Intermedio alto' }
         ]
       }
     }
