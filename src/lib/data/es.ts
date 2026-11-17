@@ -2,13 +2,13 @@ import type { SiteContent } from '$lib/types/content';
 
 export const contentEs: SiteContent = {
   meta: {
-    siteTitle: 'Manuel Rodríguez — Portafolio Académico y de Ingeniería',
+    siteTitle: 'Manuel Rodríguez | Robótica, diseño CAD y desarrollo web',
     homeDescription:
       'Estudiante de tercer año de bachillerato próximo a graduarse. Ingeniería en robótica, diseño CAD, liderazgo horizontal y proyectos con impacto.',
     cvDescription:
       'Currículum Vitae formal de Manuel Enrique Rodríguez Nicolás: trayectoria académica, robótica FTC, liderazgo organizativo y competencias técnicas.',
     privacyDescription:
-      'Aviso de Privacidad conforme a la LFPDPPP para manuelrodz.work.'
+      'Datos de contacto, alojamiento, proveedores y derechos de privacidad en manuelrodz.work.'
   },
   nav: {
     skipToContent: 'Saltar al contenido principal',
@@ -36,8 +36,8 @@ export const contentEs: SiteContent = {
     stats: [
       { value: '10+', label: 'Competencias de robótica' },
       { value: '4', label: 'Reconocimientos FTC' },
-      { value: '1', label: 'Premio internacional' },
-      { value: '80+', label: 'Personas impactadas' }
+      { value: '2', label: 'Reconocimientos internacionales', detail: 'Design Award · Mexico Premier Event / Nominación global · NASA Space Apps Challenge 2024' },
+      { value: '80+', label: 'Personas impactadas', detail: 'ValladolidMUN + Aztecbot' }
     ],
     quickFacts: [
       { icon: 'academic', text: 'Bachillerato · Gen. 2024–2027' },
@@ -46,7 +46,7 @@ export const contentEs: SiteContent = {
     ]
   },
   method: {
-    eyebrow: '01 / Metodología',
+    eyebrow: '03 / Metodología',
     heading: 'Cómo pienso y construyo',
     intro:
       'Combino análisis, criterio técnico y trabajo en equipo para resolver retos de ingeniería.',
@@ -95,7 +95,7 @@ export const contentEs: SiteContent = {
     ]
   },
   projectsSection: {
-    eyebrow: '02 / Trayectoria',
+    eyebrow: '01 / Trayectoria',
     heading: 'Hitos y proyectos',
     intro:
       'Cuatro proyectos muestran mi evolución: desde mi primer robot en secundaria hasta el liderazgo técnico, la cofundación de un equipo FTC y la organización de ValladolidMUN.',
@@ -132,7 +132,7 @@ export const contentEs: SiteContent = {
         contextNote: 'Temporadas Into the Deep (2024–2025) y Decode (2025–2026)',
         tags: ['Robótica FTC', 'Flujo CAD', 'Drive Coach'],
         executiveSummary:
-          'Entré a FTC sin experiencia y crecí de constructor a Capitán de Diseño y Drive Coach. En Decode impulsé con el equipo el flujo CAD-first bajo la metodología FEV y programé la corrección de tiro y el autoapuntado. Mi contribución fue clave para los resultados y reconocimientos colectivos de Aztecbot.',
+          'Entré a FTC sin experiencia y crecí de constructor a Capitán de Diseño y Drive Coach. En Decode impulsé con el equipo el flujo CAD-first bajo la metodología FEV y programé la corrección de tiro y el autoapuntado. También di clases de modelado CAD a 20+ personas de Aztecbot. Mi contribución fue clave para los resultados y reconocimientos colectivos de Aztecbot.',
         keyOutcome:
           'Inspire Award 1st Place y Top 10 Nacional (Into the Deep) · Winning Alliance Captain Regional y Design Award 1st Place en Mexico Premier Event (Decode).',
         caseStudy: {
@@ -149,6 +149,7 @@ export const contentEs: SiteContent = {
             'Para el Mexico Premier Event programé un sistema que ajustaba el ángulo y la velocidad del tiro y orientaba el robot hacia la canasta, reduciendo los cálculos que los drivers debían hacer durante el partido.'
           ],
           executionAndTeamwork: [
+            'Di clases de modelado CAD a 20+ miembros de Aztecbot.',
             'En Into the Deep me involucré en pensar y armar el robot con mis compañeros, mientras aprendía cómo funcionaba la competencia.',
             'En Decode coordiné la revisión de los ensambles en CAD antes de fabricarlos. Como Drive Coach, ayudé a preparar a los drivers, repasar el reglamento y decidir la estrategia durante los partidos del Nacional y el Mexico Premier Event.'
           ],
@@ -339,7 +340,7 @@ export const contentEs: SiteContent = {
       'Estos proyectos reúnen mi experiencia en robótica, programación y organización de equipos: desde mi primer robot hasta competencias FTC y la coordinación de ValladolidMUN.'
   },
   recognitionsSection: {
-    eyebrow: '03 / Competencias',
+    eyebrow: '02 / Competencias',
     heading: 'Otros resultados destacados',
     intro:
       'Además de FTC, he participado en competencias de robótica, ciencia y tecnología. Estos resultados incluyen logros individuales y de equipo.',
@@ -587,23 +588,55 @@ export const contentEs: SiteContent = {
     }
   },
   privacy: {
-    heading: 'Aviso de Privacidad',
-    effectiveDate: 'Última actualización: noviembre de 2026',
-    paragraphs: [
-      {
-        title: '1. Responsable y alcance',
-        body: 'Manuel Enrique Rodríguez Nicolás, con domicilio en Mérida, Yucatán, México, es responsable del contenido publicado en el dominio manuelrodz.work, de conformidad con los principios de licitud, información y minimización establecidos en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).'
-      },
-      {
-        title: '2. Ausencia de recolección automatizada y cookies',
-        body: 'Este sitio web es de carácter exclusivamente informativo y académico. No utiliza formularios de captura, bases de datos de visitantes, cookies publicitarias ni herramientas de analítica de terceros que rastreen su navegación o recopilen datos personales de forma automática.'
-      },
-      {
-        title: '3. Contacto voluntario por correo electrónico y derechos ARCO',
-        body: 'En caso de que usted decida enviar un correo electrónico voluntariamente a la dirección publicada en este sitio, sus datos de contacto serán utilizados únicamente para atender su mensaje relacionado con postulaciones universitarias, becas o proyectos académicos, sin ser transferidos a terceros. Usted puede solicitar el acceso, rectificación, cancelación u oposición (derechos ARCO) respecto de dicha comunicación escribiendo directamente al mismo correo de contacto.'
-      }
+    "heading": "Aviso de Privacidad",
+    "effectiveDate": "Última actualización: 16 de noviembre de 2026",
+    "paragraphs": [
+        {
+            "title": "1. Responsable y contacto",
+            "body": "Manuel Enrique Rodríguez Nicolás, ubicado en Mérida, Yucatán, México, es responsable del tratamiento de los datos personales que recibe con motivo de este portafolio académico y de ingeniería, disponible en manuelrodz.work. Para consultas de privacidad y solicitudes sobre sus datos, escriba a contact@manuelrodz.work."
+        },
+        {
+            "title": "2. Datos que puede proporcionar",
+            "body": "Al escribir por correo electrónico puede proporcionar su nombre, dirección de correo, organización, asunto, contenido del mensaje y archivos adjuntos. Solo se utilizarán los datos pertinentes para atender la comunicación. Este sitio no solicita datos personales sensibles, contraseñas, información bancaria ni documentos de identidad para una consulta ordinaria; evite enviarlos si no son necesarios."
+        },
+        {
+            "title": "3. Finalidades del contacto",
+            "body": "Los datos de contacto y el contenido de los mensajes se utilizarán para responder consultas sobre admisiones, becas, proyectos, colaboraciones y la trayectoria presentada, así como para dar seguimiento a esas conversaciones. No se utilizarán para campañas publicitarias, listas comerciales ni venta de datos. Puede pedir que deje de darse seguimiento a una conversación escribiendo al correo de contacto."
+        },
+        {
+            "title": "4. Navegación, cookies y alojamiento",
+            "body": "El código de este sitio no incorpora formularios de captura, cuentas de visitantes, cookies publicitarias ni herramientas de analítica de terceros. El sitio se aloja en Vercel: al solicitar una página, su infraestructura puede procesar datos técnicos como la dirección IP, información del navegador, la ruta solicitada y registros de acceso, para entregar el contenido, operar el servicio y protegerlo frente a abusos. La ausencia de formularios o analítica no significa que no exista procesamiento técnico por el alojamiento. Las fuentes, imágenes e iconos del portafolio se sirven desde el propio sitio."
+        },
+        {
+            "title": "5. Correo y proveedores de servicio",
+            "body": "Los mensajes enviados a contact@manuelrodz.work se reciben mediante el servicio de reenvío de Porkbun y se entregan a una cuenta privada de Gmail (Google) administrada por el responsable. Porkbun y Google intervienen en la transmisión, recepción y almacenamiento que corresponda a sus servicios. Vercel interviene en el alojamiento del sitio. Estos proveedores pueden operar infraestructura fuera de México y recurrir a otros proveedores conforme a sus condiciones. Por ello, no se promete que los datos permanezcan exclusivamente en México ni que ningún proveedor intervenga en su procesamiento."
+        },
+        {
+            "title": "6. Comunicación de datos",
+            "body": "El responsable no venderá los datos ni los divulgará para fines publicitarios. El uso de proveedores para alojamiento y correo debe distinguirse de una comunicación de datos para fines propios de otro destinatario. Cualquier comunicación adicional se sujetará al consentimiento que corresponda o a una excepción legal aplicable, incluidas las obligaciones de atender requerimientos de autoridad competentes."
+        },
+        {
+            "title": "7. Conservación y protección",
+            "body": "Actualmente los mensajes recibidos se conservan de forma indefinida en Gmail; no hay un plazo de borrado automático. Puede solicitar que se revise la necesidad de conservar una comunicación y ejercer sus derechos de cancelación u oposición mediante el correo de contacto. La conservación deberá ajustarse a las finalidades informadas y a las obligaciones legales aplicables; una solicitud de supresión se evaluará conforme a esas reglas. La conservación de registros y respaldos por los proveedores depende también de las condiciones de cada servicio. Puede solicitar la cancelación de sus datos; la eliminación puede estar sujeta a obligaciones de conservación. No envíe información confidencial innecesaria: ningún servicio de Internet garantiza seguridad absoluta."
+        },
+        {
+            "title": "8. Derechos ARCO",
+            "body": "Puede solicitar acceso, rectificación, cancelación u oposición respecto de sus datos escribiendo a contact@manuelrodz.work con el asunto “Privacidad / ARCO”. Indique su nombre, un medio para recibir respuesta, el derecho que desea ejercer y la información que permita localizar la comunicación. Para rectificar, describa el cambio y aporte su sustento. Será necesario acreditar su identidad o representación antes de entregar o modificar información; se solicitará únicamente la documentación pertinente por un medio acordado. La determinación se comunicará en un máximo de veinte días desde la recepción de la solicitud y, si procede, se hará efectiva dentro de los quince días siguientes a la respuesta, con las ampliaciones justificadas y demás reglas que permita la ley."
+        },
+        {
+            "title": "9. Limitar el uso o revocar el consentimiento",
+            "body": "Puede solicitar que se limite el uso o divulgación de sus datos, que se suspenda el seguimiento de mensajes o que se revoque el consentimiento para tratamientos que dependan de él. Utilice el mismo correo y describa su petición. La solicitud será evaluada conforme a las obligaciones legales aplicables; la revocación no tiene efectos retroactivos y puede impedir continuar la atención solicitada."
+        },
+        {
+            "title": "10. Enlaces externos",
+            "body": "Los enlaces a GitHub, Onshape, fuentes de iconos u otros sitios conducen a servicios ajenos a este portafolio. Al abrirlos, esos servicios pueden tratar datos conforme a sus propios avisos y condiciones. Publicar un enlace no significa que este portafolio controle las prácticas de privacidad del destino."
+        },
+        {
+            "title": "11. Cambios al aviso",
+            "body": "Las modificaciones se publicarán en manuelrodz.work/es/privacidad y su versión en inglés en manuelrodz.work/en/privacy, con la fecha de actualización visible al inicio. Si un cambio exige información adicional o un nuevo consentimiento, se atenderán las obligaciones aplicables antes de realizar el nuevo tratamiento. Puede solicitar aclaraciones o una copia del aviso por correo."
+        }
     ]
-  },
+},
   footer: {
     rightsNote: 'Manuel Enrique Rodríguez Nicolás · Mérida, Yucatán, México.'
   }

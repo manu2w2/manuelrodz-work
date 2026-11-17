@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
     fallbackSrc: '/images/manuel-rodriguez-placeholder.svg',
     width: 480,
     height: 330,
-    sizes: '(min-width: 1100px) 480px, (min-width: 700px) 45vw, 92vw',
+    sizes: '(min-width: 76rem) 42rem, (min-width: 54rem) calc(58.55vw - 3.5rem), calc(92vw - 1.5rem)',
     widths: [480, 960, 1440]
   },
   ogImage: {

@@ -84,6 +84,16 @@
       </div>
     </div>
 
+    <p class="brand-credits meta-text">
+      {locale === 'es'
+        ? 'Los logotipos y marcas de Onshape, C++, Java, KiCad y Svelte pertenecen a sus respectivos titulares; no son de mi autoría. Se utilizan para identificar las tecnologías, sin implicar afiliación ni respaldo.'
+        : 'Onshape, C++, Java, KiCad and Svelte logos and trademarks belong to their respective owners; I do not claim authorship. They identify technologies used and do not imply affiliation or endorsement.'}
+      {locale === 'es' ? 'Fuentes:' : 'Sources:'}
+      <a href="https://www.onshape.com/">Onshape</a>,
+      <a href="https://simpleicons.org/">Simple Icons</a>,
+      <a href="https://devicon.dev/">Devicon</a>.
+    </p>
+
     <div class="footer-bottom meta-text">
       <span>{footer.rightsNote}</span>
       <a href={getPrivacyPath(locale)}>{contact.privacyLinkLabel}</a>
@@ -141,6 +151,12 @@
     align-items: center;
     gap: 0.35rem;
     font-weight: 600;
+  }
+
+  .brand-credits {
+    max-width: 85ch;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
   }
 
   .footer-bottom {

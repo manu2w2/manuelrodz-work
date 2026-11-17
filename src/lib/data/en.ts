@@ -2,7 +2,7 @@ import type { SiteContent } from '$lib/types/content';
 
 export const contentEn: SiteContent = {
   meta: {
-    siteTitle: 'Manuel Rodríguez — Academic & Engineering Portfolio',
+    siteTitle: 'Manuel Rodríguez | Robotics, CAD Design & Web Development',
     homeDescription:
       'Graduating high school senior in Mexico. Robotics engineering, CAD design, horizontal leadership, and evidence-backed projects.',
     cvDescription:
@@ -36,8 +36,8 @@ export const contentEn: SiteContent = {
     stats: [
       { value: '10+', label: 'Robotics Competitions' },
       { value: '4', label: 'FTC Awards' },
-      { value: '1', label: 'International Design Award' },
-      { value: '80+', label: 'People Impacted' }
+      { value: '2', label: 'International Recognitions', detail: 'Design Award · Mexico Premier Event / Global Nomination · NASA Space Apps Challenge 2024' },
+      { value: '80+', label: 'People Impacted', detail: 'ValladolidMUN + Aztecbot' }
     ],
     quickFacts: [
       { icon: 'academic', text: 'High School Senior · Class of 2027' },
@@ -46,7 +46,7 @@ export const contentEn: SiteContent = {
     ]
   },
   method: {
-    eyebrow: '01 / Method',
+    eyebrow: '03 / Method',
     heading: 'How I Think and Build',
     intro:
       'I combine analysis, engineering judgment, and teamwork to solve technical challenges.',
@@ -98,7 +98,7 @@ export const contentEn: SiteContent = {
     ]
   },
   projectsSection: {
-    eyebrow: '02 / Experience',
+    eyebrow: '01 / Experience',
     heading: 'Selected Projects & Milestones',
     intro:
       'Four projects show my growth: from my first robot in middle school to technical leadership, co-founding an FTC team, and organizing ValladolidMUN.',
@@ -134,7 +134,7 @@ export const contentEn: SiteContent = {
         contextNote: 'Into the Deep (2024–2025) and Decode (2025–2026) seasons',
         tags: ['FTC Robotics', 'CAD-First', 'Drive Coach'],
         executiveSummary:
-          'I joined FTC with no prior experience and grew from builder to Design Captain and Drive Coach. In Decode, I helped establish our CAD-first workflow using the FEV method and programmed shot correction and auto-aim. My contribution was key to Aztecbot’s team results and awards.',
+          'I joined FTC with no prior experience and grew from builder to Design Captain and Drive Coach. In Decode, I helped establish our CAD-first workflow using the FEV method and programmed shot correction and auto-aim. I also taught CAD modeling classes to 20+ people at Aztecbot. My contribution was key to Aztecbot’s team results and awards.',
         keyOutcome:
           'Inspire Award 1st Place & National Top 10 (Into the Deep) · Regional Winning Alliance Captain & Mexico Premier Event Design Award 1st Place (Decode).',
         caseStudy: {
@@ -151,6 +151,7 @@ export const contentEn: SiteContent = {
             'For the Mexico Premier Event, I programmed automatic shot angle and velocity correction, along with auto-aim, to reduce execution errors under pressure.'
           ],
           executionAndTeamwork: [
+            'I taught CAD modeling classes to 20+ Aztecbot members.',
             'During Into the Deep, I worked with teammates on ideation and mechanical assembly while learning the design and build process for FTC.',
             'In Decode, I coordinated CAD reviews before fabrication. As Drive Coach at the National Championship and Mexico Premier Event, I guided driver practice, rulebook review, and match strategy.'
           ],
@@ -341,7 +342,7 @@ export const contentEn: SiteContent = {
       'These projects bring together my work in robotics, programming, and team organization, from my first robot to FTC competitions and coordinating ValladolidMUN.'
   },
   recognitionsSection: {
-    eyebrow: '03 / Competitions',
+    eyebrow: '02 / Competitions',
     heading: 'Additional Results',
     intro:
       'Beyond FTC, I have competed in robotics, science, and technology events. These results include both individual and team achievements.',
@@ -589,23 +590,55 @@ export const contentEn: SiteContent = {
     }
   },
   privacy: {
-    heading: 'Privacy Notice',
-    effectiveDate: 'Last updated: November 2026',
-    paragraphs: [
-      {
-        title: '1. Data Controller and Scope',
-        body: 'Manuel Enrique Rodríguez Nicolás, based in Mérida, Yucatán, Mexico, is responsible for the content published on manuelrodz.work, adhering to data minimization and transparency principles under Mexico’s Federal Law on Protection of Personal Data Held by Private Parties (LFPDPPP).'
-      },
-      {
-        title: '2. No Automated Data Collection or Tracking Cookies',
-        body: 'This website is strictly informational and academic. It does not use web intake forms, visitor databases, advertising cookies, or third-party tracking analytics that monitor browsing behavior or collect personal data automatically.'
-      },
-      {
-        title: '3. Voluntary Email Contact and ARCO Rights',
-        body: 'If you voluntarily send an email to the contact address published on this site, your contact details will be used exclusively to respond to inquiries regarding university admissions, scholarships, or academic collaboration, and will never be shared with third parties. You may exercise your rights of Access, Rectification, Cancellation, or Opposition (ARCO rights) regarding such correspondence by writing directly to the same contact address.'
-      }
+    "heading": "Privacy Notice",
+    "effectiveDate": "Last updated: November 16, 2026",
+    "paragraphs": [
+        {
+            "title": "1. Controller and contact",
+            "body": "Manuel Enrique Rodríguez Nicolás, located in Mérida, Yucatán, Mexico, is responsible for personal data received in connection with this academic and engineering portfolio at manuelrodz.work. For privacy questions and requests concerning your data, email contact@manuelrodz.work."
+        },
+        {
+            "title": "2. Information you may provide",
+            "body": "Email correspondence may include your name, email address, organization, subject, message content and attachments. Only information relevant to handling the correspondence will be used. This site does not request sensitive personal data, passwords, banking information or identity documents for ordinary inquiries; avoid sending them unnecessarily."
+        },
+        {
+            "title": "3. Purposes of correspondence",
+            "body": "Contact details and message content will be used to answer and follow up on inquiries about admissions, scholarships, projects, collaborations and the experience presented here. They will not be used for advertising campaigns, commercial mailing lists or data sales. You may ask to stop further follow-up by emailing the contact address."
+        },
+        {
+            "title": "4. Browsing, cookies and hosting",
+            "body": "The site code does not include intake forms, visitor accounts, advertising cookies or third-party analytics tools. The site is hosted on Vercel: when you request a page, its infrastructure may process technical information such as IP address, browser information, requested path and access logs to deliver content, operate the service and protect against abuse. The absence of forms or analytics does not mean hosting involves no technical data processing. Portfolio fonts, images and icons are served from this site."
+        },
+        {
+            "title": "5. Email and service providers",
+            "body": "Messages sent to contact@manuelrodz.work pass through Porkbun’s email forwarding service and are delivered to a private Gmail (Google) account managed by the controller. Porkbun and Google participate in transmission, receipt and storage as applicable to their services. Vercel provides website hosting. These providers may operate infrastructure outside Mexico and use additional providers under their terms. This notice therefore does not promise that data remains exclusively in Mexico or that no service provider processes it."
+        },
+        {
+            "title": "6. Disclosure of information",
+            "body": "The controller will not sell personal data or disclose it for advertising. Using hosting and email providers must be distinguished from disclosing data for another recipient’s own purposes. Any additional disclosure will be subject to the required consent or an applicable legal exception, including obligations to respond to competent authorities."
+        },
+        {
+            "title": "7. Retention and protection",
+            "body": "Received messages are currently kept indefinitely in Gmail, with no automatic deletion period. You may ask for the need to retain correspondence to be reviewed and exercise cancellation or opposition rights through the contact email. Retention must remain consistent with the stated purposes and applicable legal obligations; deletion requests will be assessed under those rules. Provider logs and backups are also subject to each service’s conditions. You may request cancellation of your data; deletion may be subject to retention obligations. Do not send unnecessary confidential information: no Internet service guarantees absolute security."
+        },
+        {
+            "title": "8. ARCO rights",
+            "body": "To request access, rectification, cancellation or opposition concerning your personal data, email contact@manuelrodz.work with the subject “Privacy / ARCO”. Include your name, a reply channel, the right you wish to exercise and information to locate the correspondence. For rectification, describe and support the requested change. Identity or authority to represent the data subject must be verified before information is disclosed or changed; only relevant documentation will be requested through an agreed channel. The decision will be communicated within twenty days of receipt, and an approved request implemented within fifteen days of the response, subject to justified extensions and other rules allowed by law."
+        },
+        {
+            "title": "9. Restricting use or withdrawing consent",
+            "body": "You may request restrictions on use or disclosure, ask to stop follow-up messages or withdraw consent for processing that relies on it. Use the same email address and describe your request. Requests will be assessed under applicable legal obligations; withdrawal is not retroactive and may prevent continued handling of your inquiry."
+        },
+        {
+            "title": "10. External links",
+            "body": "Links to GitHub, Onshape, icon sources and other websites lead to services outside this portfolio. When opened, those services may process information under their own notices and terms. Providing a link does not mean this portfolio controls the destination’s privacy practices."
+        },
+        {
+            "title": "11. Changes to this notice",
+            "body": "Changes will be published at manuelrodz.work/es/privacidad and the English version at manuelrodz.work/en/privacy, with the update date shown at the top. Where a change requires additional information or fresh consent, applicable requirements will be addressed before the new processing begins. You may request clarification or a copy of this notice by email."
+        }
     ]
-  },
+},
   footer: {
     rightsNote: 'Manuel Enrique Rodríguez Nicolás · Mérida, Yucatán, Mexico.'
   }

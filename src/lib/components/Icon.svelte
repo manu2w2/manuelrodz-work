@@ -1,5 +1,9 @@
 <script lang="ts">
   type IconName =
+    | 'cube'
+    | 'code'
+    | 'circuit'
+    | 'braces'
     | 'pin'
     | 'academic'
     | 'globe'
@@ -41,7 +45,18 @@
   aria-hidden="true"
   class="icon icon-{name} {className}"
 >
-  {#if name === 'pin'}
+  {#if name === 'cube'}
+    <path d="m12 2 9 5v10l-9 5-9-5V7Z" />
+    <path d="m3 7 9 5 9-5M12 12v10M7.5 4.5l9 5" />
+  {:else if name === 'code'}
+    <path d="m7 7-5 5 5 5m10-10 5 5-5 5M14 4l-4 16" />
+  {:else if name === 'circuit'}
+    <rect x="7" y="7" width="10" height="10" rx="1" />
+    <path d="M10 2v5m4-5v5m-4 10v5m4-5v5M2 10h5m-5 4h5m10-4h5m-5 4h5" />
+    <path d="M10 10h4v4h-4Z" />
+  {:else if name === 'braces'}
+    <path d="M9 3H7a2 2 0 0 0-2 2v4a3 3 0 0 1-3 3 3 3 0 0 1 3 3v4a2 2 0 0 0 2 2h2m6-18h2a2 2 0 0 1 2 2v4a3 3 0 0 0 3 3 3 3 0 0 0-3 3v4a2 2 0 0 1-2 2h-2" />
+  {:else if name === 'pin'}
     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
     <circle cx="12" cy="10" r="3" />
   {:else if name === 'academic'}

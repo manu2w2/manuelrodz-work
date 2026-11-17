@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-  <title>Manuel Enrique Rodríguez Nicolás — manuelrodz.work</title>
+  <title>Manuel Rodríguez | Robótica, diseño CAD y desarrollo web</title>
   <meta name="robots" content="noindex" />
 </svelte:head>
 

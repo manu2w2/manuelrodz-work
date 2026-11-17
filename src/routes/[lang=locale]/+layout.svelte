@@ -21,6 +21,10 @@
 
   let { data, children }: Props = $props();
 
+  $effect(() => {
+    document.documentElement.lang = data.locale;
+  });
+
   let esUrl = $derived(
     `${SITE_CONFIG.domain}${getAlternateLocalePath($page.url.pathname, 'es')}`
   );

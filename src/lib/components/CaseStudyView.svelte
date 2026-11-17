@@ -197,7 +197,7 @@
           {:else if asset.status === 'active' && asset.url}
             <p class="meta-text">
               <a href={asset.url} target="_blank" rel="noopener noreferrer" class="evidence-external-link">
-                <span>{asset.url}</span>
+                <span>{locale === 'es' ? (asset.type === 'onshape' ? 'Ver modelo en Onshape' : asset.type === 'github' ? 'Ver código en GitHub' : 'Visitar sitio web') : (asset.type === 'onshape' ? 'View model in Onshape' : asset.type === 'github' ? 'View code on GitHub' : 'Visit website')}</span>
                 <Icon name="external" size={13} />
                 <!-- Fix #10: hidden external link hint -->
                 <span class="sr-only">({labels.externalLinkHint})</span>
@@ -355,7 +355,13 @@
     transform: translateX(-3px);
   }
 
+  .evidence-list, .evidence-row {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
   .evidence-external-link {
+    max-width: 100%;
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;

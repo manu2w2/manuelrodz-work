@@ -1,4 +1,5 @@
 <script lang="ts">
+  import PrivacyNoticeView from '$lib/components/PrivacyNoticeView.svelte';
   import type { PageData } from './$types';
 
   interface Props {
@@ -14,23 +15,4 @@
   <meta name="description" content={data.content.meta.privacyDescription} />
 </svelte:head>
 
-<article class="container privacy-article stack-lg">
-  <header class="stack-sm">
-    <p class="meta-text">{privacy.effectiveDate}</p>
-    <h1>{privacy.heading}</h1>
-  </header>
-
-  {#each privacy.paragraphs as block}
-    <section class="stack-sm">
-      <h2>{block.title}</h2>
-      <p>{block.body}</p>
-    </section>
-  {/each}
-</article>
-
-<style>
-  .privacy-article {
-    padding-block: 2.5rem 4rem;
-  }
-</style>
-
+<PrivacyNoticeView {privacy} locale={data.locale} />

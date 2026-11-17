@@ -131,24 +131,27 @@
         <li class="lang-item">
           <div
             class="lang-capsule"
+            data-locale={locale}
             role="group"
             aria-label={locale === "es"
               ? "Selector de idioma"
               : "Language selector"}
           >
-            <span class="lang-badge current" aria-hidden="true">
-              {locale.toUpperCase()}
-            </span>
-            <span class="lang-separator" aria-hidden="true">/</span>
-            <a
-              href={switchHref}
-              hreflang={targetLocale}
-              class="lang-badge switch-target"
-              onclick={closeMenu}
-            >
-              <span>{targetLocale.toUpperCase()}</span>
-              <span class="sr-only">{nav.switchLanguageLabel}</span>
-            </a>
+            {#each ['es', 'en'] as language}
+              {#if language === locale}
+                <span class="lang-badge current" aria-hidden="true">{language.toUpperCase()}</span>
+              {:else}
+                <a
+                  href={switchHref}
+                  hreflang={targetLocale}
+                  class="lang-badge switch-target"
+                  onclick={closeMenu}
+                >
+                  <span>{language.toUpperCase()}</span>
+                  <span class="sr-only">{nav.switchLanguageLabel}</span>
+                </a>
+              {/if}
+            {/each}
           </div>
         </li>
       </ul>
@@ -378,7 +381,9 @@
   }
 
   .lang-capsule {
-    display: inline-flex;
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: repeat(2, 2.25rem);
     align-items: center;
     background-color: var(--bg-surface);
     border: 1px solid var(--border-subtle);
@@ -387,7 +392,27 @@
     gap: 0.15rem;
   }
 
+  .lang-capsule::before {
+    content: '';
+    position: absolute;
+    top: 0.18rem;
+    bottom: 0.18rem;
+    left: 0.28rem;
+    width: 2.25rem;
+    border-radius: 14px;
+    background-color: var(--accent-primary);
+    transform: translateX(0);
+    transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  .lang-capsule[data-locale="en"]::before {
+    transform: translateX(calc(100% + 0.15rem));
+  }
+
   .lang-badge {
+    position: relative;
+    z-index: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -404,7 +429,6 @@
   }
 
   .lang-badge.current {
-    background-color: var(--accent-primary);
     color: var(--bg-canvas);
     cursor: default;
   }
@@ -432,11 +456,10 @@
     );
   }
 
-  .lang-separator {
-    color: var(--border-strong);
-    font-size: 0.7rem;
-    user-select: none;
-    opacity: 0.6;
+  @media (prefers-reduced-motion: reduce) {
+    .lang-capsule::before {
+      transition: none;
+    }
   }
 
   /* ─── Mobile Menu Toggle & Drawer ─── */

@@ -10,6 +10,7 @@
 
   let { data }: Props = $props();
   let c = $derived(data.content);
+  const stackIcons = [["onshape"], ["cplusplus", "java"], ["kicad"], ["svelte"]] as const;
   let cvFile = $derived(SITE_CONFIG.cvFiles[data.locale]);
 
   let personJsonLd = $derived(
@@ -36,6 +37,25 @@
       ],
     }).replace(/</g, "\\u003c"),
   );
+
+  function revealRecognition(node: HTMLElement, index: number) {
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let animation: Animation | undefined;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      observer.disconnect();
+      if (!motion.matches) {
+        animation = node.animate(
+          [{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'translateY(0)' }],
+          { duration: 500, delay: index * 75, easing: 'cubic-bezier(0.2, 0.7, 0.3, 1)', fill: 'backwards' }
+        );
+      }
+    }, { threshold: 0.15 });
+    const stopMotion = () => { if (motion.matches) animation?.cancel(); };
+    motion.addEventListener('change', stopMotion);
+    observer.observe(node);
+    return { destroy() { observer.disconnect(); animation?.cancel(); motion.removeEventListener('change', stopMotion); } };
+  }
 
   function heroSrcSet(format: "avif" | "webp") {
     return SITE_CONFIG.heroImage.widths
@@ -114,7 +134,16 @@
       <!-- Ficha técnica de stack directo en el Hero (alineada con base de métricas) -->
       <div class="hero-spec-bar anim-fade-up anim-delay-4">
         <span class="spec-label">{c.hero.coreStackLabel}</span>
-        <span class="spec-values">{c.hero.coreStackValues}</span>
+        <ul class="spec-values">
+          {#each c.hero.coreStackValues.split(' · ') as technology, index}
+            <li class="stack-technology">
+              {#each stackIcons[index] ?? [] as icon}
+                <span class="stack-brand-icon" style={`--brand-icon: url('/icons/stack/${icon}.svg')`} aria-hidden="true"></span>
+              {/each}
+              <span>{technology}</span>
+            </li>
+          {/each}
+        </ul>
       </div>
     </div>
 
@@ -293,6 +322,7 @@
             <li class="highlight-item">
               <span class="highlight-number">{stat.value}</span>
               <span class="highlight-label">{stat.label}</span>
+              {#if stat.detail}<span class="highlight-detail">{stat.detail}</span>{/if}
             </li>
           {/each}
         </ul>
@@ -313,58 +343,6 @@
       </span>
     {/each}
   </div>
-
-  <!-- ═══ METHOD — Editorial Timeline & FEV Framework ═══ -->
-  <section
-    class="dossier-section editorial-grid"
-    aria-labelledby="metodo-heading"
-  >
-    <div class="stack-sm">
-      <span class="eyebrow">{c.method.eyebrow}</span>
-      <h2 id="metodo-heading">{c.method.heading}</h2>
-      <p class="meta-text">{c.method.intro}</p>
-    </div>
-
-    <div class="stack-lg">
-      <div class="philosophy-box stack-sm">
-        <h3 class="philosophy-title">{c.method.philosophyTitle}</h3>
-        <p class="philosophy-body">{c.method.philosophyBody}</p>
-      </div>
-
-      <div class="stack-md">
-        <h3 class="subsection-title">{c.method.stepsTitle}</h3>
-        <ol class="timeline-steps" aria-label={c.method.stepsTitle}>
-          {#each c.method.steps as step, i}
-            <li class="timeline-step">
-              <span class="step-number" aria-hidden="true">{i + 1}</span>
-              <div class="step-content">
-                <strong class="step-name">{step.name}</strong>
-                <p class="step-detail">{step.detail}</p>
-              </div>
-            </li>
-          {/each}
-        </ol>
-      </div>
-
-      <div class="fev-block stack-md">
-        <div class="stack-sm">
-          <h3 class="subsection-title">{c.method.fevTitle}</h3>
-          <p>{c.method.fevSummary}</p>
-        </div>
-        <dl class="fev-pillars">
-          {#each c.method.fevPillars as pillar}
-            <div class="pillar-card">
-              <dt>
-                {pillar.term}{#if pillar.termAlt}
-                  (<span lang="es">{pillar.termAlt}</span>){/if}
-              </dt>
-              <dd>{pillar.definition}</dd>
-            </div>
-          {/each}
-        </dl>
-      </div>
-    </div>
-  </section>
 
   <!-- ═══ PROJECTS — Anchor Milestones Ledger ═══ -->
   <section
@@ -454,8 +432,8 @@
     </div>
 
     <ul class="recognitions-grid">
-      {#each c.recognitionsSection.items as recognition}
-        <li class="recognition-card stack-sm">
+      {#each c.recognitionsSection.items as recognition, index}
+        <li class="recognition-card stack-sm" use:revealRecognition={index}>
           <h3>{recognition.result}</h3>
           <p class="meta-text">{recognition.event}</p>
           {#if recognition.detail}
@@ -464,6 +442,58 @@
         </li>
       {/each}
     </ul>
+  </section>
+
+  <!-- ═══ METHOD — Editorial Timeline & FEV Framework ═══ -->
+  <section
+    class="dossier-section editorial-grid"
+    aria-labelledby="metodo-heading"
+  >
+    <div class="stack-sm">
+      <span class="eyebrow">{c.method.eyebrow}</span>
+      <h2 id="metodo-heading">{c.method.heading}</h2>
+      <p class="meta-text">{c.method.intro}</p>
+    </div>
+
+    <div class="stack-lg">
+      <div class="philosophy-box stack-sm">
+        <h3 class="philosophy-title">{c.method.philosophyTitle}</h3>
+        <p class="philosophy-body">{c.method.philosophyBody}</p>
+      </div>
+
+      <div class="stack-md">
+        <h3 class="subsection-title">{c.method.stepsTitle}</h3>
+        <ol class="timeline-steps" aria-label={c.method.stepsTitle}>
+          {#each c.method.steps as step, i}
+            <li class="timeline-step">
+              <span class="step-number" aria-hidden="true">{i + 1}</span>
+              <div class="step-content">
+                <strong class="step-name">{step.name}</strong>
+                <p class="step-detail">{step.detail}</p>
+              </div>
+            </li>
+          {/each}
+        </ol>
+      </div>
+
+      <div class="fev-block stack-md">
+        <div class="stack-sm">
+          <h3 class="subsection-title">{c.method.fevTitle}</h3>
+          <p>{c.method.fevSummary}</p>
+        </div>
+        <dl class="fev-pillars">
+          {#each c.method.fevPillars as pillar}
+            <div class="pillar-card">
+              <dt>
+                {pillar.term}{#if pillar.termAlt}
+                  (<span lang="es">{pillar.termAlt}</span>){/if}
+              </dt>
+              <dd>{pillar.definition}</dd>
+            </div>
+          {/each}
+        </dl>
+      </div>
+    </div>
   </section>
 
   <!-- ═══ COMPLEMENTARY — Holistic Dimensions ═══ -->
@@ -564,8 +594,32 @@
   }
 
   .spec-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: none;
     font-weight: 500;
     color: var(--text-secondary); /* #525B56 — contraste 6.45:1 */
+  }
+
+  .stack-technology {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0;
+  }
+
+  .stack-brand-icon {
+    display: inline-block;
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-shrink: 0;
+    background-color: var(--accent-primary);
+    -webkit-mask: var(--brand-icon) center / contain no-repeat;
+    mask: var(--brand-icon) center / contain no-repeat;
   }
 
   /* ─── Photo Place / CAD Wireframe ─── */
@@ -634,10 +688,17 @@
     justify-content: center;
   }
 
+  .photo-container picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+  }
+
   .profile-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     filter: contrast(1.02);
     transition: transform 450ms var(--ease-smooth);
@@ -732,6 +793,13 @@
     color: var(--accent-primary);
     line-height: 1.05;
   }
+
+  .highlight-detail {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .highlight-detail { color: var(--text-secondary); }
 
   .highlight-label {
     font-size: 0.8125rem;
@@ -1140,6 +1208,21 @@
     padding: 1.25rem;
     border: 1px solid var(--border-subtle);
     background-color: var(--bg-surface);
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .recognition-card {
+      transition:
+        transform var(--duration-fast) var(--ease-spring),
+        border-color var(--duration-fast) var(--ease-out),
+        box-shadow var(--duration-fast) var(--ease-out);
+    }
+
+    .recognition-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-primary);
+      box-shadow: 0 8px 20px rgba(30, 32, 30, 0.08);
+    }
   }
 
   .recognition-card h3 {

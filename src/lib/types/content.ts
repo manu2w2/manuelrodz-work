@@ -76,6 +76,8 @@ export interface SiteContent {
     stats: Array<{
       value: string;
       label: string;
+      detail?: string;
+      href?: string;
     }>;
     quickFacts: Array<{
       icon: 'academic' | 'globe' | 'cog';
