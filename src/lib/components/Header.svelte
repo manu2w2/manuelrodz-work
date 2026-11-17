@@ -7,6 +7,7 @@
     getAlternateLocalePath,
     getCvPath,
     getHomePath,
+    getProjectsPath,
   } from "$lib/utils/i18n";
 
   interface Props {
@@ -21,6 +22,7 @@
     getAlternateLocalePath($page.url.pathname, targetLocale),
   );
   let homeHref = $derived(getHomePath(locale));
+  let projectsHref = $derived(getProjectsPath(locale));
   let cvHref = $derived(getCvPath(locale));
   let menuOpen = $state(false);
 
@@ -96,7 +98,7 @@
       <ul class="nav-list">
         <li>
           <a
-            href="{homeHref}#proyectos"
+            href={projectsHref}
             class="nav-link"
             class:is-active={isProjects}
             aria-current={isProjects ? "page" : undefined}

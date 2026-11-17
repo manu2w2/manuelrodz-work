@@ -12,6 +12,7 @@ interface Pair {
 
 const pairs: Pair[] = [
   { es: '/es', en: '/en' },
+  { es: '/es/proyectos', en: '/en/projects' },
   { es: '/es/cv', en: '/en/cv' },
   { es: '/es/privacidad', en: '/en/privacy' },
   ...contentEs.projectsSection.items.map((project, index) => ({

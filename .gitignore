@@ -33,6 +33,7 @@ jspm_packages/
 build/
 dist/
 .vite/
+tmp/
 
 # Editor directories and files
 .vscode/*

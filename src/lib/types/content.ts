@@ -28,6 +28,8 @@ export interface AnchorProject {
   executiveSummary: string;
   keyOutcome: string;
   caseStudy: {
+    openingSummary: string;
+    caseOutcome?: string;
     attributionStatement: string;
     contextAndConstraints: string[];
     analysisAndDecisions: string[];
@@ -125,6 +127,21 @@ export interface SiteContent {
       nextProjectLabel: string;
     };
     items: AnchorProject[];
+  };
+  projectsIndex: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+  };
+  recognitionsSection: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    items: Array<{
+      result: string;
+      event: string;
+      detail?: string;
+    }>;
   };
   complementary: {
     eyebrow: string;

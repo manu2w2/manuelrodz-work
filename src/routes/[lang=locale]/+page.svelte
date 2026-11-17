@@ -438,6 +438,34 @@
     </div>
   </section>
 
+  <!-- ═══ RECOGNITIONS — Results beyond FTC ═══ -->
+  <section
+    class="dossier-section"
+    aria-labelledby="reconocimientos-heading"
+  >
+    <div class="editorial-grid projects-intro">
+      <div class="stack-sm">
+        <span class="eyebrow">{c.recognitionsSection.eyebrow}</span>
+        <h2 id="reconocimientos-heading">{c.recognitionsSection.heading}</h2>
+      </div>
+      <div>
+        <p class="section-lead">{c.recognitionsSection.intro}</p>
+      </div>
+    </div>
+
+    <ul class="recognitions-grid">
+      {#each c.recognitionsSection.items as recognition}
+        <li class="recognition-card stack-sm">
+          <h3>{recognition.result}</h3>
+          <p class="meta-text">{recognition.event}</p>
+          {#if recognition.detail}
+            <p>{recognition.detail}</p>
+          {/if}
+        </li>
+      {/each}
+    </ul>
+  </section>
+
   <!-- ═══ COMPLEMENTARY — Holistic Dimensions ═══ -->
   <section
     class="dossier-section editorial-grid"
@@ -1089,6 +1117,33 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .recognitions-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    max-width: none;
+  }
+
+  @media (min-width: 44rem) {
+    .recognitions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .recognition-card {
+    margin: 0;
+    padding: 1.25rem;
+    border: 1px solid var(--border-subtle);
+    background-color: var(--bg-surface);
+  }
+
+  .recognition-card h3 {
+    color: var(--accent-primary);
   }
 
   @media (min-width: 44rem) {

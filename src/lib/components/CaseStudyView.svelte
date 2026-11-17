@@ -19,6 +19,23 @@
   let { locale, project, nextProject, labels }: Props = $props();
   let activePhoto = $state<EvidenceAsset | null>(null);
   let activePhotoTrigger = $state<HTMLElement | null>(null);
+  let sectionIds = $derived(
+    locale === 'es'
+      ? {
+          context: 'contexto',
+          decisions: 'decisiones',
+          execution: 'ejecucion',
+          outcomes: 'resultados',
+          evidence: 'evidencia'
+        }
+      : {
+          context: 'context',
+          decisions: 'decisions',
+          execution: 'execution',
+          outcomes: 'outcomes',
+          evidence: 'documentation'
+        }
+  );
 </script>
 
 <article class="container case-article">
@@ -35,7 +52,7 @@
     </p>
     <h1>{project.title}</h1>
     <p class="role-line">{project.roleSummary}</p>
-    <p>{project.executiveSummary}</p>
+    <p>{project.caseStudy.openingSummary}</p>
 
     <section class="glance" aria-label={labels.glanceHeading}>
       <dl class="glance-grid">
@@ -53,18 +70,18 @@
         </div>
         <div class="glance-wide">
           <dt>{labels.glanceOutcome}</dt>
-          <dd>{project.keyOutcome}</dd>
+          <dd>{project.caseStudy.caseOutcome ?? project.keyOutcome}</dd>
         </div>
       </dl>
     </section>
 
     <nav aria-label={labels.jumpHeading} class="jump-nav">
       <ul class="jump-list">
-        <li><a href="#contexto">{labels.sectionContext}</a></li>
-        <li><a href="#decisiones">{labels.sectionDecisions}</a></li>
-        <li><a href="#ejecucion">{labels.sectionExecution}</a></li>
-        <li><a href="#resultados">{labels.sectionOutcomes}</a></li>
-        <li><a href="#evidencia">{labels.sectionEvidence}</a></li>
+        <li><a href={`#${sectionIds.context}`}>{labels.sectionContext}</a></li>
+        <li><a href={`#${sectionIds.decisions}`}>{labels.sectionDecisions}</a></li>
+        <li><a href={`#${sectionIds.execution}`}>{labels.sectionExecution}</a></li>
+        <li><a href={`#${sectionIds.outcomes}`}>{labels.sectionOutcomes}</a></li>
+        <li><a href={`#${sectionIds.evidence}`}>{labels.sectionEvidence}</a></li>
       </ul>
     </nav>
   </header>
@@ -78,9 +95,13 @@
     </div>
   </section>
 
-  <section id="contexto" class="dossier-section editorial-grid" aria-labelledby="contexto-heading">
+  <section
+    id={sectionIds.context}
+    class="dossier-section editorial-grid"
+    aria-labelledby={`${sectionIds.context}-heading`}
+  >
     <div>
-      <h2 id="contexto-heading">{labels.sectionContext}</h2>
+      <h2 id={`${sectionIds.context}-heading`}>{labels.sectionContext}</h2>
     </div>
     <div class="stack-md">
       {#each project.caseStudy.contextAndConstraints as paragraph}
@@ -89,9 +110,13 @@
     </div>
   </section>
 
-  <section id="decisiones" class="dossier-section editorial-grid" aria-labelledby="decisiones-heading">
+  <section
+    id={sectionIds.decisions}
+    class="dossier-section editorial-grid"
+    aria-labelledby={`${sectionIds.decisions}-heading`}
+  >
     <div>
-      <h2 id="decisiones-heading">{labels.sectionDecisions}</h2>
+      <h2 id={`${sectionIds.decisions}-heading`}>{labels.sectionDecisions}</h2>
     </div>
     <div class="stack-md">
       {#each project.caseStudy.analysisAndDecisions as paragraph}
@@ -100,9 +125,13 @@
     </div>
   </section>
 
-  <section id="ejecucion" class="dossier-section editorial-grid" aria-labelledby="ejecucion-heading">
+  <section
+    id={sectionIds.execution}
+    class="dossier-section editorial-grid"
+    aria-labelledby={`${sectionIds.execution}-heading`}
+  >
     <div>
-      <h2 id="ejecucion-heading">{labels.sectionExecution}</h2>
+      <h2 id={`${sectionIds.execution}-heading`}>{labels.sectionExecution}</h2>
     </div>
     <div class="stack-md">
       {#each project.caseStudy.executionAndTeamwork as paragraph}
@@ -111,9 +140,13 @@
     </div>
   </section>
 
-  <section id="resultados" class="dossier-section editorial-grid" aria-labelledby="resultados-heading">
+  <section
+    id={sectionIds.outcomes}
+    class="dossier-section editorial-grid"
+    aria-labelledby={`${sectionIds.outcomes}-heading`}
+  >
     <div>
-      <h2 id="resultados-heading">{labels.sectionOutcomes}</h2>
+      <h2 id={`${sectionIds.outcomes}-heading`}>{labels.sectionOutcomes}</h2>
     </div>
     <div class="stack-md">
       <ul>
@@ -124,9 +157,13 @@
     </div>
   </section>
 
-  <section id="evidencia" class="dossier-section editorial-grid" aria-labelledby="evidencia-heading">
+  <section
+    id={sectionIds.evidence}
+    class="dossier-section editorial-grid"
+    aria-labelledby={`${sectionIds.evidence}-heading`}
+  >
     <div>
-      <h2 id="evidencia-heading">{labels.sectionEvidence}</h2>
+      <h2 id={`${sectionIds.evidence}-heading`}>{labels.sectionEvidence}</h2>
     </div>
     <div class="evidence-list">
       {#each project.caseStudy.evidence as asset, i}
